@@ -4,8 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
+    android:background="@drawable/gradient_login_background"
     tools:context=".view.ui.LoginActivity">
+
+    <ImageView
+        android:id="@+id/activitySplashKotlinLogoImageview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/activity_splash_logo_imageview_margins"
+        android:layout_marginEnd="@dimen/activity_splash_logo_imageview_margins"
+        android:layout_marginLeft="@dimen/activity_splash_logo_imageview_margins"
+        android:layout_marginRight="@dimen/activity_splash_logo_imageview_margins"
+        android:layout_marginStart="@dimen/activity_splash_logo_imageview_margins"
+        android:layout_marginTop="@dimen/activity_splash_logo_imageview_margins"
+        android:alpha="0.3"
+        android:scaleType="centerInside"
+        android:src="@drawable/kotlin_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView

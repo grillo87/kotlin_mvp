@@ -19,7 +19,7 @@ open class BaseActivity : Activity() {
 
     private fun defineCustomFont() {
 
-        this.customFont = Typeface.createFromAsset(applicationContext.assets, "fonts/cartier_sackers_gothic_medium.otf")
+        this.customFont = Typeface.createFromAsset(applicationContext.assets, "fonts/kotlin.otf")
     }
 
     open fun setCustomFonts() {}

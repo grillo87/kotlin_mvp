@@ -42,6 +42,9 @@ class SplashActivity : BaseActivity() {
         activitySplashSubtitleTextview.setAlpha(0f)
         activitySplashSubtitleTextview.setVisibility(View.VISIBLE)
 
+        activitySplashKotlinLogoImageview.setAlpha(0f)
+        activitySplashKotlinLogoImageview.setVisibility(View.VISIBLE)
+
     }
 
     fun startAnimations() {
@@ -54,6 +57,11 @@ class SplashActivity : BaseActivity() {
 
         activitySplashSubtitleTextview.animate()
                 .alpha(1f)
+                .setDuration(fadeInAnimationDuration)
+                .setListener(null)
+
+        activitySplashKotlinLogoImageview.animate()
+                .alpha(0.3f)
                 .setDuration(fadeInAnimationDuration)
                 .setListener(null)
 

@@ -11,7 +11,7 @@
         android:id="@+id/activityDetailToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,16 +20,17 @@
 
     <ImageView
         android:id="@+id/activityDetailBackImageview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/toolbar_back_width"
+        android:layout_height="0dp"
         android:layout_marginBottom="@dimen/toolbar_back_margin_bottom"
         android:layout_marginLeft="@dimen/toolbar_back_lateral_margins"
         android:layout_marginStart="@dimen/toolbar_back_lateral_margins"
         android:layout_marginTop="@dimen/toolbar_back_margin_bottom"
+        android:scaleType="centerInside"
+        android:src="@drawable/back_arrow"
         app:layout_constraintBottom_toBottomOf="@+id/activityDetailToolbar"
         app:layout_constraintStart_toStartOf="@+id/activityDetailToolbar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_revert" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/activityDetailTitleTextview"
@@ -46,16 +47,17 @@
 
     <ImageView
         android:id="@+id/activityDetailProfileImageview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/toolbar_logout_width"
+        android:layout_height="0dp"
         android:layout_marginBottom="@dimen/toolbar_profile_imageview_margins"
         android:layout_marginEnd="@dimen/toolbar_profile_imageview_margins"
         android:layout_marginRight="@dimen/toolbar_profile_imageview_margins"
         android:layout_marginTop="@dimen/toolbar_profile_imageview_margins"
+        android:scaleType="centerInside"
+        android:src="@drawable/logout_icon"
         app:layout_constraintBottom_toBottomOf="@+id/activityDetailToolbar"
         app:layout_constraintEnd_toEndOf="@+id/activityDetailToolbar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.constraint.Guideline
         android:id="@+id/activityDetailHorizontalHeaderGuideline"

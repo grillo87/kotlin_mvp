@@ -9,5 +9,13 @@
     <color name="white">#ffffff</color>
     <color name="deep_lilac">#8C4FBC</color>
 
+    <color name="fire_bush">#DE9249</color>
+    <color name="violet_blue">#AE66B0</color>
+    <color name="contessa">#C27774</color>
+
+    <color name="celestial_blue">#5493CA</color>
+    <color name="havelock_blue">#5683CF</color>
+    <color name="moody_blue">#7276D4</color>
+
 
 </resources>

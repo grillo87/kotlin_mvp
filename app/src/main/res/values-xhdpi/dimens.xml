@@ -14,7 +14,7 @@
     <dimen name="form_input_lateral_margins">8dp</dimen>
     <dimen name="activity_register_register_button_margin_top">24dp</dimen>
     <dimen name="form_button_lateral_margins">8dp</dimen>
-    <dimen name="toolbar_back_margin_bottom">8dp</dimen>
+    <dimen name="toolbar_back_margin_bottom">16dp</dimen>
     <dimen name="toolbar_back_lateral_margins">16dp</dimen>
     <dimen name="form_inputs_textsize">14sp</dimen>
     <dimen name="form_buttons_textsize">16sp</dimen>
@@ -37,5 +37,8 @@
     <dimen name="element_list_image_margins">8dp</dimen>
     <dimen name="element_list_container_margins">16dp</dimen>
     <dimen name="element_list_height">150dp</dimen>
+    <dimen name="activity_splash_logo_imageview_margins">8dp</dimen>
+    <dimen name="toolbar_back_width">30dp</dimen>
+    <dimen name="toolbar_logout_width">30dp</dimen>
 
 </resources>

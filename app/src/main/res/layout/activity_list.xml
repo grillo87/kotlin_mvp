@@ -37,16 +37,17 @@
 
     <ImageView
         android:id="@+id/activityListProfileImageview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/toolbar_logout_width"
+        android:layout_height="0dp"
         android:layout_marginBottom="@dimen/toolbar_profile_imageview_margins"
         android:layout_marginEnd="@dimen/toolbar_profile_imageview_margins"
         android:layout_marginRight="@dimen/toolbar_profile_imageview_margins"
         android:layout_marginTop="@dimen/toolbar_profile_imageview_margins"
+        android:scaleType="centerInside"
+        android:src="@drawable/logout_icon"
         app:layout_constraintBottom_toBottomOf="@+id/activityListToolBar"
         app:layout_constraintEnd_toEndOf="@+id/activityListToolBar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/activityListTitleTextview"

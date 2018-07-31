@@ -7,13 +7,32 @@
     android:background="@drawable/gradient_background"
     tools:context=".view.ui.SplashActivity">
 
+    <ImageView
+        android:id="@+id/activitySplashKotlinLogoImageview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/activity_splash_logo_imageview_margins"
+        android:layout_marginEnd="@dimen/activity_splash_logo_imageview_margins"
+        android:layout_marginLeft="@dimen/activity_splash_logo_imageview_margins"
+        android:layout_marginRight="@dimen/activity_splash_logo_imageview_margins"
+        android:layout_marginStart="@dimen/activity_splash_logo_imageview_margins"
+        android:layout_marginTop="@dimen/activity_splash_logo_imageview_margins"
+        android:alpha="0.3"
+        android:scaleType="centerInside"
+        android:src="@drawable/kotlin_logo"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/activitySplashTitleTextview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="@string/k_splash_title"
+        android:text="@string/kotlin_splash_title"
         android:textColor="@color/white"
         android:textSize="@dimen/k_splash_title_textsize"
         android:textStyle="bold"

@@ -11,6 +11,20 @@ import kotlinx.android.synthetic.main.activity_login.*
 class LoginActivity : BaseActivity() {
 
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        setContentView(R.layout.activity_login)
+        super.onCreate(savedInstanceState)
+
+    }
+
+
+    override fun setCustomFonts() {
+        activityLoginTitleTextview.setTypeface(this.customFont)
+        activityLoginButton.setTypeface(this.customFont)
+        activityLoginRegisterButton.setTypeface(this.customFont)
+    }
+
+
     fun navigateToRegister() {
 
         val loginIntent = Intent().setClass(
@@ -20,9 +34,4 @@ class LoginActivity : BaseActivity() {
 
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        setContentView(R.layout.activity_login)
-        super.onCreate(savedInstanceState)
-
-    }
 }
