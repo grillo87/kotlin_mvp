@@ -5,35 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    tools:context=".SplashActivity">
+    tools:context=".view.ui.SplashActivity">
 
 
     <TextView
-        android:id="@+id/activity_splash_title_textview"
+        android:id="@+id/activitySplashTitleTextview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:text="@string/k_splash_title"
         android:textColor="@color/white"
         android:textSize="@dimen/k_splash_title_textsize"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/centerHorizontalGuideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/activity_splash_subtitle_textview"
+        android:id="@+id/activitySplashSubtitleTextview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/subtitle_splash_margin_top"
+        android:layout_marginTop="8dp"
         android:text="@string/mvp_subtitle_text"
         android:textColor="@color/colorAccent"
         android:textSize="@dimen/subtitle_splash_textsize"
         android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_splash_title_textview" />
+        app:layout_constraintTop_toTopOf="@+id/centerHorizontalGuideline" />
 
 
     <TextView
@@ -48,5 +51,12 @@
         android:textSize="@dimen/developed_by_textsize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/centerHorizontalGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
 
 </android.support.constraint.ConstraintLayout>

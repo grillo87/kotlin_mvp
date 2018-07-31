@@ -5,6 +5,116 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    tools:context=".LoginActivity">
+    tools:context=".view.ui.LoginActivity">
+
+
+    <TextView
+        android:id="@+id/activityLoginTitleTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="@dimen/form_title_margin_top"
+        android:text="@string/login_title_text"
+        android:textColor="@color/white"
+        android:textSize="@dimen/form_title_textsize"
+        app:layout_constraintBottom_toTopOf="@+id/activityLoginEmailEdittext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/activityLoginEdittextsGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <EditText
+        android:id="@+id/activityLoginEmailEdittext"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_input_height"
+        android:layout_marginBottom="@dimen/form_input_margin_bottom"
+        android:layout_marginEnd="@dimen/form_input_lateral_margins"
+        android:layout_marginLeft="@dimen/form_input_lateral_margins"
+        android:layout_marginRight="@dimen/form_input_lateral_margins"
+        android:layout_marginStart="@dimen/form_input_lateral_margins"
+        android:background="@drawable/form_inputs_background"
+        android:ems="10"
+        android:hint="@string/form_email_text"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="@dimen/form_input_padding_left"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="@dimen/form_inputs_textsize"
+        app:layout_constraintBottom_toTopOf="@+id/activityLoginEdittextsGuideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/activityLoginPasswordEdittext"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_input_height"
+        android:layout_marginBottom="@dimen/form_input_margin_bottom"
+        android:layout_marginEnd="@dimen/form_input_lateral_margins"
+        android:layout_marginLeft="@dimen/form_input_lateral_margins"
+        android:layout_marginRight="@dimen/form_input_lateral_margins"
+        android:layout_marginStart="@dimen/form_input_lateral_margins"
+        android:background="@drawable/form_inputs_background"
+        android:ems="10"
+        android:hint="@string/form_password_text"
+        android:inputType="textPassword"
+        android:paddingLeft="@dimen/form_input_padding_left"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="@dimen/form_inputs_textsize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/activityLoginEdittextsGuideline" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/activityLoginButtonsGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <Button
+        android:id="@+id/activityLoginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/form_button_lateral_margins"
+        android:layout_marginLeft="@dimen/form_button_lateral_margins"
+        android:layout_marginRight="@dimen/form_button_lateral_margins"
+        android:layout_marginStart="@dimen/form_button_lateral_margins"
+        android:layout_marginTop="@dimen/activity_register_register_button_margin_top"
+        android:background="@color/deep_lilac"
+        android:text="@string/button_login_text"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/form_buttons_textsize"
+        app:layout_constraintBottom_toTopOf="@+id/activityLoginButtonsGuideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/activityLoginRegisterButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/form_button_lateral_margins"
+        android:layout_marginLeft="@dimen/form_button_lateral_margins"
+        android:layout_marginRight="@dimen/form_button_lateral_margins"
+        android:layout_marginStart="@dimen/form_button_lateral_margins"
+        android:layout_marginTop="@dimen/activity_register_register_button_margin_top"
+        android:background="@color/colorAccent"
+        android:text="@string/button_register_text"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/form_buttons_textsize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/activityLoginButtonsGuideline" />
 
 </android.support.constraint.ConstraintLayout>

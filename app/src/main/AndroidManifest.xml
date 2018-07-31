@@ -10,19 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashActivity"
-            android:label="@string/title_activity_splash"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:name=".view.ui.SplashActivity"
+            android:label="@string/title_activity_splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".ListActivity" />
-        <activity android:name=".DetailActivity" />
+        <activity android:name=".view.ui.LoginActivity" />
+        <activity android:name=".view.ui.RegisterActivity" />
+        <activity android:name=".view.ui.ListActivity" />
+        <activity android:name=".view.ui.DetailActivity" />
     </application>
 
 </manifest>

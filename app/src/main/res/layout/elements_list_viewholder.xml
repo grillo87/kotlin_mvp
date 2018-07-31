@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/element_list_height"
+    android:background="@android:color/transparent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/element_list_container_margins"
+        android:layout_marginEnd="@dimen/element_list_container_margins"
+        android:layout_marginLeft="@dimen/element_list_container_margins"
+        android:layout_marginRight="@dimen/element_list_container_margins"
+        android:layout_marginStart="@dimen/element_list_container_margins"
+        android:layout_marginTop="@dimen/element_list_container_margins"
+        android:background="@drawable/list_elements_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <android.support.constraint.Guideline
+            android:id="@+id/elementListViewholderGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4" />
+
+
+        <ImageView
+            android:id="@+id/elementListImageview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/element_list_image_margins"
+            android:layout_marginEnd="@dimen/element_list_image_margins"
+            android:layout_marginLeft="@dimen/element_list_image_margins"
+            android:layout_marginRight="@dimen/element_list_image_margins"
+            android:layout_marginStart="@dimen/element_list_image_margins"
+            android:layout_marginTop="@dimen/element_list_image_margins"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/elementListViewholderGuideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/elementListTitleTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/element_list_titles_upper_margins"
+            android:layout_marginLeft="@dimen/element_list_titles_lateral_margins"
+            android:layout_marginStart="@dimen/element_list_titles_lateral_margins"
+            android:layout_marginTop="@dimen/element_list_titles_upper_margins"
+            android:gravity="center|left"
+            android:maxLines="1"
+            app:layout_constraintBottom_toTopOf="@id/elementListAreaTextview"
+            app:layout_constraintStart_toStartOf="@+id/elementListViewholderGuideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/elementListAreaTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/element_list_titles_upper_margins"
+            android:layout_marginLeft="@dimen/element_list_titles_lateral_margins"
+            android:layout_marginStart="@dimen/element_list_titles_lateral_margins"
+            android:gravity="center|left"
+            android:maxLines="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/elementListViewholderGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/elementListTitleTextview" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>

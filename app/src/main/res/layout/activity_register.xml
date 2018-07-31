@@ -4,7 +4,139 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
-    tools:context=".RegisterActivity">
+    android:background="@drawable/gradient_register_background"
+    tools:context=".view.ui.RegisterActivity">
+
+    <TextView
+        android:id="@+id/activityRegisterTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="@dimen/form_title_margin_top"
+        android:text="@string/register_title_text"
+        android:textColor="@color/white"
+        android:textSize="@dimen/form_title_textsize"
+        app:layout_constraintBottom_toTopOf="@+id/activityRegisterEmailEdittext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activityRegisterToolbar" />
+
+    <EditText
+        android:id="@+id/activityRegisterEmailEdittext"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_input_height"
+        android:layout_marginBottom="@dimen/form_input_margin_bottom"
+        android:layout_marginEnd="@dimen/form_input_lateral_margins"
+        android:layout_marginLeft="@dimen/form_input_lateral_margins"
+        android:layout_marginRight="@dimen/form_input_lateral_margins"
+        android:layout_marginStart="@dimen/form_input_lateral_margins"
+        android:background="@drawable/form_register_inputs_background"
+        android:ems="10"
+        android:hint="@string/form_email_text"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="@dimen/form_input_padding_left"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="@dimen/form_inputs_textsize"
+        app:layout_constraintBottom_toTopOf="@+id/activityRegisterPasswordEdittext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/activityRegisterInputsDivider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <EditText
+        android:id="@+id/activityRegisterPasswordEdittext"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_input_height"
+        android:layout_marginBottom="@dimen/form_input_margin_bottom"
+        android:layout_marginEnd="@dimen/form_input_lateral_margins"
+        android:layout_marginLeft="@dimen/form_input_lateral_margins"
+        android:layout_marginRight="@dimen/form_input_lateral_margins"
+        android:layout_marginStart="@dimen/form_input_lateral_margins"
+        android:background="@drawable/form_register_inputs_background"
+        android:ems="10"
+        android:hint="@string/form_password_text"
+        android:inputType="textPassword"
+        android:paddingLeft="@dimen/form_input_padding_left"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="@dimen/form_inputs_textsize"
+        app:layout_constraintBottom_toTopOf="@+id/activityRegisterConfirmEmailEdittext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/activityRegisterConfirmEmailEdittext"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/form_input_height"
+        android:layout_marginBottom="@dimen/form_input_margin_bottom"
+        android:layout_marginEnd="@dimen/form_input_lateral_margins"
+        android:layout_marginLeft="@dimen/form_input_lateral_margins"
+        android:layout_marginRight="@dimen/form_input_lateral_margins"
+        android:layout_marginStart="@dimen/form_input_lateral_margins"
+        android:background="@drawable/form_register_inputs_background"
+        android:ems="10"
+        android:hint="@string/form_confirm_password_text"
+        android:inputType="textPassword"
+        android:paddingLeft="@dimen/form_input_padding_left"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="@dimen/form_inputs_textsize"
+        app:layout_constraintBottom_toTopOf="@+id/activityRegisterInputsDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/activityRegisterButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/form_button_lateral_margins"
+        android:layout_marginLeft="@dimen/form_button_lateral_margins"
+        android:layout_marginRight="@dimen/form_button_lateral_margins"
+        android:layout_marginStart="@dimen/form_button_lateral_margins"
+        android:layout_marginTop="@dimen/activity_register_register_button_margin_top"
+        android:background="@color/white"
+        android:text="@string/button_register_text"
+        android:textAllCaps="false"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/form_buttons_textsize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/activityRegisterInputsDivider" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/activityRegisterToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/activityDetailBackImageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/toolbar_back_margin_bottom"
+        android:layout_marginLeft="@dimen/toolbar_back_lateral_margins"
+        android:layout_marginStart="@dimen/toolbar_back_lateral_margins"
+        android:layout_marginTop="@dimen/toolbar_back_margin_bottom"
+        android:scaleType="centerInside"
+        android:src="@android:drawable/ic_menu_revert"
+        app:layout_constraintBottom_toBottomOf="@+id/activityRegisterToolbar"
+        app:layout_constraintStart_toStartOf="@+id/activityRegisterToolbar"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

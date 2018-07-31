@@ -5,6 +5,135 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    tools:context=".DetailActivity">
+    tools:context=".view.ui.DetailActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/activityDetailToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/activityDetailBackImageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/toolbar_back_margin_bottom"
+        android:layout_marginLeft="@dimen/toolbar_back_lateral_margins"
+        android:layout_marginStart="@dimen/toolbar_back_lateral_margins"
+        android:layout_marginTop="@dimen/toolbar_back_margin_bottom"
+        app:layout_constraintBottom_toBottomOf="@+id/activityDetailToolbar"
+        app:layout_constraintStart_toStartOf="@+id/activityDetailToolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
+
+    <TextView
+        android:id="@+id/activityDetailTitleTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/toolbar_title_upper_margins"
+        android:layout_marginLeft="@dimen/toolbar_title_lateral_margins"
+        android:layout_marginStart="@dimen/toolbar_title_lateral_margins"
+        android:layout_marginTop="@dimen/toolbar_title_upper_margins"
+        android:textSize="@dimen/tootlbar_title_textsize"
+        app:layout_constraintBottom_toBottomOf="@+id/activityDetailToolbar"
+        app:layout_constraintStart_toEndOf="@+id/activityDetailBackImageview"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/activityDetailProfileImageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/toolbar_profile_imageview_margins"
+        android:layout_marginEnd="@dimen/toolbar_profile_imageview_margins"
+        android:layout_marginRight="@dimen/toolbar_profile_imageview_margins"
+        android:layout_marginTop="@dimen/toolbar_profile_imageview_margins"
+        app:layout_constraintBottom_toBottomOf="@+id/activityDetailToolbar"
+        app:layout_constraintEnd_toEndOf="@+id/activityDetailToolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/activityDetailHorizontalHeaderGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/activityDetailVerticalHeaderGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <ImageView
+        android:id="@+id/activityDetailContentImageview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/activity_detail_image_margins"
+        android:layout_marginEnd="@dimen/activity_detail_image_margins"
+        android:layout_marginLeft="@dimen/activity_detail_image_margins"
+        android:layout_marginRight="@dimen/activity_detail_image_margins"
+        android:layout_marginStart="@dimen/activity_detail_image_margins"
+        android:layout_marginTop="@dimen/activity_detail_image_margins"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/activityDetailHorizontalHeaderGuideline"
+        app:layout_constraintEnd_toStartOf="@+id/activityDetailVerticalHeaderGuideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activityDetailToolbar" />
+
+    <TextView
+        android:id="@+id/activityDetailContentTitleTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/activity_detail_content_titles_upper_margins"
+        android:layout_marginLeft="@dimen/activity_detail_content_titles_lateral_margins"
+        android:layout_marginStart="@dimen/activity_detail_content_titles_lateral_margins"
+        android:layout_marginTop="@dimen/activity_detail_content_titles_upper_margins"
+        android:gravity="center|left"
+        android:maxLines="1"
+        app:layout_constraintBottom_toTopOf="@+id/activityDetailAreaTextview"
+        app:layout_constraintStart_toStartOf="@+id/activityDetailVerticalHeaderGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/activityDetailToolbar" />
+
+    <TextView
+        android:id="@+id/activityDetailAreaTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/activity_detail_content_titles_upper_margins"
+        android:layout_marginLeft="@dimen/activity_detail_content_titles_lateral_margins"
+        android:layout_marginStart="@dimen/activity_detail_content_titles_lateral_margins"
+        android:gravity="center|left"
+        android:maxLines="1"
+        app:layout_constraintBottom_toTopOf="@+id/activityDetailHorizontalHeaderGuideline"
+        app:layout_constraintStart_toStartOf="@+id/activityDetailVerticalHeaderGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/activityDetailContentTitleTextview" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/activity_detail_content_scrollview_upper_margins"
+        android:layout_marginEnd="@dimen/activity_detail_content_scrollview_lateral_margins"
+        android:layout_marginLeft="@dimen/activity_detail_content_scrollview_lateral_margins"
+        android:layout_marginRight="@dimen/activity_detail_content_scrollview_lateral_margins"
+        android:layout_marginStart="@dimen/activity_detail_content_scrollview_lateral_margins"
+        android:layout_marginTop="@dimen/activity_detail_content_scrollview_upper_margins"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/activityDetailHorizontalHeaderGuideline">
+
+        <TextView
+            android:id="@+id/activityDetailContentTextview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/white" />
+
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

@@ -5,6 +5,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    tools:context=".ListActivity">
+    tools:context=".view.ui.ListActivity">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/activityListRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/activity_list_recycler_upper_margins"
+        android:layout_marginEnd="@dimen/activity_list_recycler_lateral_margins"
+        android:layout_marginLeft="@dimen/activity_list_recycler_lateral_margins"
+        android:layout_marginRight="@dimen/activity_list_recycler_lateral_margins"
+        android:layout_marginStart="@dimen/activity_list_recycler_lateral_margins"
+        android:layout_marginTop="@dimen/activity_list_recycler_upper_margins"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activityListToolBar" />
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/activityListToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/activityListProfileImageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/toolbar_profile_imageview_margins"
+        android:layout_marginEnd="@dimen/toolbar_profile_imageview_margins"
+        android:layout_marginRight="@dimen/toolbar_profile_imageview_margins"
+        android:layout_marginTop="@dimen/toolbar_profile_imageview_margins"
+        app:layout_constraintBottom_toBottomOf="@+id/activityListToolBar"
+        app:layout_constraintEnd_toEndOf="@+id/activityListToolBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
+
+    <TextView
+        android:id="@+id/activityListTitleTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/toolbar_title_upper_margins"
+        android:layout_marginLeft="@dimen/toolbar_title_lateral_margins"
+        android:layout_marginStart="@dimen/toolbar_title_lateral_margins"
+        android:layout_marginTop="@dimen/toolbar_title_upper_margins"
+        android:text="@string/kotlin_list_title"
+        android:textSize="@dimen/tootlbar_title_textsize"
+        app:layout_constraintBottom_toBottomOf="@+id/activityListToolBar"
+        app:layout_constraintStart_toStartOf="@+id/activityListToolBar"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
