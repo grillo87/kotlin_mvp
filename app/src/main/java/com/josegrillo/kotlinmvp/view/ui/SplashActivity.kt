@@ -1,15 +1,22 @@
 package com.josegrillo.kotlinmvp.view.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.josegrillo.kotlinmvp.R
+import com.josegrillo.kotlinmvp.di.component.DaggerActivitiesComponent
+import com.josegrillo.kotlinmvp.di.module.ActivitiesModule
 import com.josegrillo.kotlinmvp.view.base.BaseActivity
+import com.josegrillo.kotlinmvp.view.contracts.SplashContract
 import kotlinx.android.synthetic.main.activity_splash.*
-import android.content.Intent
 import java.util.*
+import javax.inject.Inject
 
 
-class SplashActivity : BaseActivity() {
+class SplashActivity : BaseActivity(), SplashContract.View {
+
+    @Inject
+    lateinit var presenter: SplashContract.Presenter
 
     val fadeInAnimationDuration: Long = 3000
     val splashTimeDuration: Long = 5000
@@ -19,10 +26,15 @@ class SplashActivity : BaseActivity() {
         setContentView(R.layout.activity_splash)
         super.onCreate(savedInstanceState)
 
-        defineAnimations()
-        startAnimations()
-        startSplashTimer()
+    }
 
+    override fun injectDependency() {
+        val splashComponent = DaggerActivitiesComponent.builder()
+                .activitiesModule(ActivitiesModule())
+                .build()
+
+        splashComponent.inject(this)
+        presenter.attach(this)
     }
 
 
@@ -34,7 +46,7 @@ class SplashActivity : BaseActivity() {
     }
 
 
-    fun defineAnimations() {
+    override fun defineAnimations() {
 
         activitySplashTitleTextview.setAlpha(0f)
         activitySplashTitleTextview.setVisibility(View.VISIBLE)
@@ -47,7 +59,7 @@ class SplashActivity : BaseActivity() {
 
     }
 
-    fun startAnimations() {
+    override fun startAnimations() {
 
 
         activitySplashTitleTextview.animate()
@@ -68,7 +80,7 @@ class SplashActivity : BaseActivity() {
     }
 
 
-    fun startSplashTimer() {
+    override fun startSplashTimer() {
 
         val task = object : TimerTask() {
             override fun run() {

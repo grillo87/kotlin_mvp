@@ -2,6 +2,12 @@
 
 buildscript {
     ext.kotlin_version = '1.2.30'
+    ext.dagger2_version = '2.5'
+    ext.constraint_layout_version = '1.1.2'
+    ext.support_library_version = '27.1.1'
+
+
+
     repositories {
         google()
         jcenter()
