@@ -16,5 +16,15 @@ class LoginPresenter : LoginContract.Presenter {
 
     override fun attach(view: LoginContract.View) {
         this.view = view
+        this.view.showLoading()
     }
+
+    override fun validateUserLogin(email: String, password: String) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun registerUser() {
+
+    }
+
 }

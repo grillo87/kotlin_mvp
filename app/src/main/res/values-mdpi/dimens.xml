@@ -40,5 +40,12 @@
     <dimen name="activity_splash_logo_imageview_margins">8dp</dimen>
     <dimen name="toolbar_back_width">30dp</dimen>
     <dimen name="toolbar_logout_width">30dp</dimen>
+    <dimen name="dialog_loading_body_upper_margins">8dp</dimen>
+    <dimen name="dialog_loading_body_lateral_margins">8dp</dimen>
+    <dimen name="dialog_loading_loading_upper_margins">8dp</dimen>
+    <dimen name="dialog_loading_loading_lateral_margins">8dp</dimen>
+    <dimen name="dialog_loading_body_text_size">14sp</dimen>
+    <dimen name="dialog_loading_loading_size">60dp</dimen>
+    <dimen name="dialog_loading_body_height">60dp</dimen>
 
 </resources>
