@@ -1,15 +1,16 @@
 package com.josegrillo.kotlinmvp.view.ui
 
-import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.josegrillo.kotlinmvp.R
 import com.josegrillo.kotlinmvp.di.component.DaggerActivitiesComponent
 import com.josegrillo.kotlinmvp.di.module.ActivitiesModule
 import com.josegrillo.kotlinmvp.view.base.BaseActivity
 import com.josegrillo.kotlinmvp.view.contracts.LoginContract
 import com.josegrillo.kotlinmvp.view.utils.DialogUtils
+import com.josegrillo.kotlinmvp.view.utils.ToastUtils
 import kotlinx.android.synthetic.main.activity_login.*
 import javax.inject.Inject
 
@@ -18,6 +19,7 @@ class LoginActivity : BaseActivity(), LoginContract.View, View.OnClickListener {
 
     @Inject
     lateinit var presenter: LoginContract.Presenter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_login)
@@ -53,19 +55,27 @@ class LoginActivity : BaseActivity(), LoginContract.View, View.OnClickListener {
     }
 
     override fun showLoading() {
-        dialog = DialogUtils.showLoadingDialog(this, "Probando Loading\niiififififif", this.customFont)
+        dialog = DialogUtils.showLoadingDialog(this, resources.getString(R.string.loading_login_text), this.customFont)
     }
 
     override fun hideLoading() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        dialog?.dismiss()
     }
 
-    override fun showEmailError(message: String) {
-        activityLoginEmailEdittext.setError(message)
+    override fun showEmptyError() {
+        ToastUtils.showToastMessage(applicationContext, resources.getString(R.string.empty_inputs_message))
     }
 
-    override fun showPasswordError(message: String) {
-        activityLoginPasswordEdittext.setError(message)
+    override fun showEmailError() {
+        activityLoginEmailEdittext.setError(resources.getString(R.string.email_error_format_message))
+    }
+
+    override fun showPasswordError() {
+        activityLoginEmailEdittext.setError(resources.getString(R.string.password_error_format_message))
+    }
+
+    override fun showErrorMessage(message: String) {
+        ToastUtils.showToastMessage(applicationContext, message)
     }
 
 
@@ -75,11 +85,12 @@ class LoginActivity : BaseActivity(), LoginContract.View, View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
+
         when (v?.id) {
 
-            activityLoginButton.id -> presenter.validateUserLogin(activityLoginEmailEdittext.text.toString(), activityLoginPasswordEdittext.text.toString())
+            activityLoginButton.id -> presenter.loginUser(activityLoginEmailEdittext.text.toString().trim(), activityLoginPasswordEdittext.text.toString().trim())
 
-            activityLoginPasswordEdittext.id -> presenter.registerUser()
+            activityLoginRegisterButton.id -> presenter.registerUser()
 
         }
     }

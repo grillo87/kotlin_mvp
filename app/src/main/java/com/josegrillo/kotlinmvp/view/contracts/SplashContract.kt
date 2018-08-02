@@ -11,6 +11,8 @@ class SplashContract {
     interface Presenter: BaseContract.Presenter<View> {
 
         fun initializeViewElements()
+        fun checkUserSession()
+        fun deleteArticlesSelected()
 
     }
 

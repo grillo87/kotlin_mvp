@@ -22,6 +22,7 @@ open class BaseActivity : Activity() {
         setCustomFonts()
         setStatusBar()
         setAppOrientation()
+        initializeOnClickListeners()
 
     }
 

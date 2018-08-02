@@ -86,13 +86,13 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="@dimen/form_inputs_textsize"
-        app:layout_constraintBottom_toTopOf="@+id/activityRegisterConfirmEmailEdittext"
+        app:layout_constraintBottom_toTopOf="@+id/activityRegisterConfirmPasswordEdittext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/activityRegisterConfirmEmailEdittext"
+        android:id="@+id/activityRegisterConfirmPasswordEdittext"
         android:layout_width="match_parent"
         android:layout_height="@dimen/form_input_height"
         android:layout_marginBottom="@dimen/form_input_margin_bottom"

@@ -8,14 +8,16 @@ class LoginContract {
         fun showLoading()
         fun hideLoading()
         fun clearFormErrors()
-        fun showEmailError(message: String)
-        fun showPasswordError(message: String)
+        fun showEmptyError()
+        fun showEmailError()
+        fun showPasswordError()
+        fun showErrorMessage(message: String)
 
     }
 
     interface Presenter : BaseContract.Presenter<View> {
 
-        fun validateUserLogin(email: String, password: String)
+        fun loginUser(email: String, password: String)
         fun registerUser()
 
     }

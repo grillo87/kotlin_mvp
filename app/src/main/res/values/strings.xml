@@ -18,4 +18,13 @@
     <string name="button_login_text">Sign In</string>
     <string name="kotlin_list_title">Kotlin Elements</string>
 
+    <string name="loading_login_text">Signing in</string>
+    <string name="loading_register_text">Signing up</string>
+    <string name="loading_articles_text">Getting articles</string>
+
+    <string name="empty_inputs_message">Inputs cannot be empty</string>
+    <string name="email_error_format_message">Invalid format</string>
+    <string name="password_error_format_message">Must have more than 4 characters</string>
+    <string name="password_missmatch_error_message">Check password and confirm password</string>
+
 </resources>

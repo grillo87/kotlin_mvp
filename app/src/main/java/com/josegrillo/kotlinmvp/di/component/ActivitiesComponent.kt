@@ -1,10 +1,11 @@
 package com.josegrillo.kotlinmvp.di.component
 
 import com.josegrillo.kotlinmvp.di.module.ActivitiesModule
+import com.josegrillo.kotlinmvp.di.module.UseCaseModule
 import com.josegrillo.kotlinmvp.view.ui.*
 import dagger.Component
 
-@Component(modules = arrayOf(ActivitiesModule::class))
+@Component(modules = arrayOf(ActivitiesModule::class, UseCaseModule::class))
 interface ActivitiesComponent {
 
     fun inject(splashActivity: SplashActivity)
