@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.josegrillo.kotlinmvp.R
 import com.josegrillo.kotlinmvp.di.component.DaggerActivitiesComponent
 import com.josegrillo.kotlinmvp.di.module.ActivitiesModule
+import com.josegrillo.kotlinmvp.di.module.LocalRepositoryModule
 import com.josegrillo.kotlinmvp.domain.model.ArticleView
 import com.josegrillo.kotlinmvp.view.base.BaseActivity
 import com.josegrillo.kotlinmvp.view.contracts.DetailContract
@@ -25,6 +26,7 @@ class DetailActivity : BaseActivity(), DetailContract.View {
 
     override fun injectDependency() {
         val detailComponent = DaggerActivitiesComponent.builder()
+                .localRepositoryModule(LocalRepositoryModule(applicationContext))
                 .activitiesModule(ActivitiesModule())
                 .build()
 

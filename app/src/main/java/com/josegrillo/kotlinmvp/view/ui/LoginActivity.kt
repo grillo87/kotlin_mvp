@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.josegrillo.kotlinmvp.R
 import com.josegrillo.kotlinmvp.di.component.DaggerActivitiesComponent
 import com.josegrillo.kotlinmvp.di.module.ActivitiesModule
+import com.josegrillo.kotlinmvp.di.module.LocalRepositoryModule
 import com.josegrillo.kotlinmvp.view.base.BaseActivity
 import com.josegrillo.kotlinmvp.view.contracts.LoginContract
 import com.josegrillo.kotlinmvp.view.utils.DialogUtils
@@ -29,6 +30,7 @@ class LoginActivity : BaseActivity(), LoginContract.View, View.OnClickListener {
 
     override fun injectDependency() {
         val loginComponent = DaggerActivitiesComponent.builder()
+                .localRepositoryModule(LocalRepositoryModule(applicationContext))
                 .activitiesModule(ActivitiesModule())
                 .build()
 

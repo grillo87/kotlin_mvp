@@ -1,10 +1,15 @@
 package com.josegrillo.kotlinmvp.domain.model
 
-data class Article(val title: String,
-                   val area: String,
-                   val imageUrl: String,
-                   val content: String) {
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
 
-    constructor() : this("", "", "", "")
+@Entity(tableName = "articles")
+data class Article(@PrimaryKey(autoGenerate = true) var id: Long? = null,
+                   var title: String = "",
+                   var area: String = "",
+                   var imageUrl: String = "",
+                   var content: String = "") {
+
+    constructor() : this(-1, "", "", "", "")
 
 }

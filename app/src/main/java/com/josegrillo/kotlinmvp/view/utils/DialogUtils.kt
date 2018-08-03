@@ -22,8 +22,6 @@ class DialogUtils {
             dialogLoadingBody.setTypeface(typeface)
             dialogLoadingBody.setText(message)
 
-            dialog.show()
-
             return dialog
 
         }

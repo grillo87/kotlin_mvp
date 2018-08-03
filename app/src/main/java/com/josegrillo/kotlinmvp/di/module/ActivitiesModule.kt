@@ -10,8 +10,8 @@ import dagger.Provides
 class ActivitiesModule {
 
     @Provides
-    fun provideSplashPresenter(getUser: GetUser, deleteArticleSelected: DeleteArticleSelected): SplashContract.Presenter {
-        return SplashPresenter(getUser, deleteArticleSelected)
+    fun provideSplashPresenter(getUser: GetUser, getArticleSelected: GetArticleSelected, deleteArticleSelected: DeleteArticleSelected): SplashContract.Presenter {
+        return SplashPresenter(getUser, getArticleSelected, deleteArticleSelected)
     }
 
     @Provides

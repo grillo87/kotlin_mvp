@@ -7,7 +7,9 @@ import javax.inject.Singleton
 
 @Module
 class AppModule(val app: KotlinApplication) {
+
     @Provides
     @Singleton
     fun provideApp() = app
+
 }

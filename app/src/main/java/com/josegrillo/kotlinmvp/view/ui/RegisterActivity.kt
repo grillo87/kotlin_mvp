@@ -6,6 +6,7 @@ import android.view.View
 import com.josegrillo.kotlinmvp.R
 import com.josegrillo.kotlinmvp.di.component.DaggerActivitiesComponent
 import com.josegrillo.kotlinmvp.di.module.ActivitiesModule
+import com.josegrillo.kotlinmvp.di.module.LocalRepositoryModule
 import com.josegrillo.kotlinmvp.view.base.BaseActivity
 import com.josegrillo.kotlinmvp.view.contracts.RegisterContract
 import com.josegrillo.kotlinmvp.view.utils.DialogUtils
@@ -27,6 +28,7 @@ class RegisterActivity : BaseActivity(), RegisterContract.View, View.OnClickList
     override fun injectDependency() {
 
         val registerComponent = DaggerActivitiesComponent.builder()
+                .localRepositoryModule(LocalRepositoryModule(applicationContext))
                 .activitiesModule(ActivitiesModule())
                 .build()
 

@@ -2,8 +2,8 @@ package com.josegrillo.kotlinmvp.base
 
 import android.app.Application
 import com.josegrillo.kotlinmvp.di.component.AppComponent
-import com.josegrillo.kotlinmvp.di.module.AppModule
 import com.josegrillo.kotlinmvp.di.component.DaggerAppComponent
+import com.josegrillo.kotlinmvp.di.module.AppModule
 
 
 class KotlinApplication : Application() {

@@ -1,13 +1,17 @@
 package com.josegrillo.kotlinmvp.view.presenter
 
+import android.util.Log
 import com.josegrillo.kotlinmvp.domain.usecase.DeleteArticleSelected
+import com.josegrillo.kotlinmvp.domain.usecase.GetArticleSelected
 import com.josegrillo.kotlinmvp.domain.usecase.GetUser
 import com.josegrillo.kotlinmvp.view.contracts.SplashContract
+import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class SplashPresenter @Inject constructor(val getUser: GetUser, val deleteArticleSelected: DeleteArticleSelected) : SplashContract.Presenter {
+class SplashPresenter @Inject constructor(val getUser: GetUser, val getArticleSelected: GetArticleSelected, val deleteArticleSelected: DeleteArticleSelected) : SplashContract.Presenter {
 
     private lateinit var view: SplashContract.View
+    private val LOG_TAG = "SplashPresenter"
 
 
     override fun initializeViewElements() {
@@ -28,11 +32,55 @@ class SplashPresenter @Inject constructor(val getUser: GetUser, val deleteArticl
     }
 
     override fun checkUserSession() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+        getUser.isUserLoggin().subscribeOn(Schedulers.newThread())
+                .subscribe(
+                        { isEmpty ->
+                            navigateNextView(isEmpty)
+                        },
+                        { error ->
+                            Log.e(LOG_TAG, "Error Message: " + error.message)
+                        }
+                )
+
     }
 
     override fun deleteArticlesSelected() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        deleteArticleSelected.deleteArticlesRepo().subscribeOn(Schedulers.newThread())
+                .subscribe(
+                        { _ ->
+                            checkUserSession()
+
+                        },
+                        { error ->
+                            Log.e(LOG_TAG, "Error Message: " + error.message)
+                        }
+                )
+    }
+
+    override fun checkArticleSelected() {
+        getArticleSelected.isArticleRepoEmpty().subscribeOn(Schedulers.newThread())
+                .subscribe(
+                        { articleRepoEmpty ->
+                            if (!articleRepoEmpty) {
+                                deleteArticlesSelected()
+                            } else {
+                                checkUserSession()
+                            }
+
+                        },
+                        { error ->
+                            Log.e(LOG_TAG, "Error Message: " + error.message)
+                        }
+                )
+    }
+
+    override fun navigateNextView(isEmpty: Boolean) {
+        if (isEmpty) {
+            this.view.navigateToLogin()
+        } else {
+            this.view.navigateToList()
+        }
     }
 
 
