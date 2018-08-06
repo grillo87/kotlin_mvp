@@ -27,7 +27,6 @@ class SplashActivity : BaseActivity(), SplashContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_splash)
         super.onCreate(savedInstanceState)
-
     }
 
     override fun injectDependency() {

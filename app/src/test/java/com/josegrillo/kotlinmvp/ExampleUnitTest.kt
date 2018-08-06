@@ -1,8 +1,8 @@
 package com.josegrillo.kotlinmvp
 
-import org.junit.Test
-
+import com.josegrillo.kotlinmvp.domain.model.UserView
 import org.junit.Assert.*
+import org.junit.Test
 
 /**
  * Example local unit test, which will execute on the development machine (host).

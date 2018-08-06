@@ -58,6 +58,7 @@ class LoginActivity : BaseActivity(), LoginContract.View, View.OnClickListener {
 
     override fun showLoading() {
         dialog = DialogUtils.showLoadingDialog(this, resources.getString(R.string.loading_login_text), this.customFont)
+        dialog?.show()
     }
 
     override fun hideLoading() {

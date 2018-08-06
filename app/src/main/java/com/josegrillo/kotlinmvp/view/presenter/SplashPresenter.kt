@@ -33,7 +33,7 @@ class SplashPresenter @Inject constructor(val getUser: GetUser, val getArticleSe
 
     override fun checkUserSession() {
 
-        getUser.isUserLoggin().subscribeOn(Schedulers.newThread())
+        getUser.isUserLoggin().subscribeOn(Schedulers.io())
                 .subscribe(
                         { isEmpty ->
                             navigateNextView(isEmpty)
@@ -46,7 +46,7 @@ class SplashPresenter @Inject constructor(val getUser: GetUser, val getArticleSe
     }
 
     override fun deleteArticlesSelected() {
-        deleteArticleSelected.deleteArticlesRepo().subscribeOn(Schedulers.newThread())
+        deleteArticleSelected.deleteArticlesRepo().subscribeOn(Schedulers.io())
                 .subscribe(
                         { _ ->
                             checkUserSession()
@@ -59,7 +59,7 @@ class SplashPresenter @Inject constructor(val getUser: GetUser, val getArticleSe
     }
 
     override fun checkArticleSelected() {
-        getArticleSelected.isArticleRepoEmpty().subscribeOn(Schedulers.newThread())
+        getArticleSelected.isArticleRepoEmpty().subscribeOn(Schedulers.io())
                 .subscribe(
                         { articleRepoEmpty ->
                             if (!articleRepoEmpty) {
