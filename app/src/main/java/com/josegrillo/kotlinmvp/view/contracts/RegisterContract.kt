@@ -1,5 +1,7 @@
 package com.josegrillo.kotlinmvp.view.contracts
 
+import com.josegrillo.kotlinmvp.domain.model.database.User
+
 class RegisterContract {
 
     interface View : BaseContract.View {
@@ -7,11 +9,14 @@ class RegisterContract {
         fun showLoading()
         fun hideLoading()
         fun navigateToLogin()
+        fun navigateToList()
         fun showEmptyError()
         fun showEmailError()
         fun showPasswordError()
         fun showPasswordMissMatchError()
         fun showErrorMessage(message: String)
+        fun showUnavailableError()
+        fun showUnexpectedError()
         fun clearFormErrors()
 
     }
@@ -20,6 +25,7 @@ class RegisterContract {
 
         fun registerUser(email: String, password: String, confirmPassword: String)
         fun loginUser()
+        fun insertUser(user: User)
 
     }
 

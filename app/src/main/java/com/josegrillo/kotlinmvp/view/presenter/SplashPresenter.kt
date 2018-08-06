@@ -5,10 +5,11 @@ import com.josegrillo.kotlinmvp.domain.usecase.DeleteArticleSelected
 import com.josegrillo.kotlinmvp.domain.usecase.GetArticleSelected
 import com.josegrillo.kotlinmvp.domain.usecase.GetUser
 import com.josegrillo.kotlinmvp.view.contracts.SplashContract
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class SplashPresenter @Inject constructor(val getUser: GetUser, val getArticleSelected: GetArticleSelected, val deleteArticleSelected: DeleteArticleSelected) : SplashContract.Presenter {
+class SplashPresenter @Inject constructor(val getUser: GetUser, val getArticleSelected: GetArticleSelected, val deleteArticleSelected: DeleteArticleSelected, val subscriptions :CompositeDisposable) : SplashContract.Presenter {
 
     private lateinit var view: SplashContract.View
     private val LOG_TAG = "SplashPresenter"
@@ -20,10 +21,8 @@ class SplashPresenter @Inject constructor(val getUser: GetUser, val getArticleSe
         this.view.startSplashTimer()
     }
 
-    override fun subscribe() {
-    }
-
     override fun unsubscribe() {
+        subscriptions.clear()
     }
 
     override fun attach(view: SplashContract.View) {
@@ -33,7 +32,7 @@ class SplashPresenter @Inject constructor(val getUser: GetUser, val getArticleSe
 
     override fun checkUserSession() {
 
-        getUser.isUserLoggin().subscribeOn(Schedulers.io())
+        var subscribe = getUser.isUserLoggin().subscribeOn(Schedulers.io())
                 .subscribe(
                         { isEmpty ->
                             navigateNextView(isEmpty)
@@ -43,10 +42,12 @@ class SplashPresenter @Inject constructor(val getUser: GetUser, val getArticleSe
                         }
                 )
 
+        subscriptions.add(subscribe)
+
     }
 
     override fun deleteArticlesSelected() {
-        deleteArticleSelected.deleteArticlesRepo().subscribeOn(Schedulers.io())
+        var subscribe = deleteArticleSelected.deleteArticlesRepo().subscribeOn(Schedulers.io())
                 .subscribe(
                         { _ ->
                             checkUserSession()
@@ -55,10 +56,12 @@ class SplashPresenter @Inject constructor(val getUser: GetUser, val getArticleSe
                             Log.e(LOG_TAG, "Error Message: " + error.message)
                         }
                 )
+
+        subscriptions.add(subscribe)
     }
 
     override fun checkArticleSelected() {
-        getArticleSelected.isArticleRepoEmpty().subscribeOn(Schedulers.io())
+        var subscribe = getArticleSelected.isArticleRepoEmpty().subscribeOn(Schedulers.io())
                 .subscribe(
                         { articleRepoEmpty ->
                             if (!articleRepoEmpty) {
@@ -72,6 +75,8 @@ class SplashPresenter @Inject constructor(val getUser: GetUser, val getArticleSe
                             Log.e(LOG_TAG, "Error Message: " + error.message)
                         }
                 )
+
+        subscriptions.add(subscribe)
     }
 
     override fun navigateNextView(isEmpty: Boolean) {

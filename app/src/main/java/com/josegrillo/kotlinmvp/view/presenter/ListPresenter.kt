@@ -5,18 +5,16 @@ import com.josegrillo.kotlinmvp.domain.usecase.DeleteArticleSelected
 import com.josegrillo.kotlinmvp.domain.usecase.GetArticles
 import com.josegrillo.kotlinmvp.domain.usecase.InsertArticleSelected
 import com.josegrillo.kotlinmvp.view.contracts.ListContract
+import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
 
-class ListPresenter @Inject constructor(val getArticles: GetArticles, val insertArticleSelected: InsertArticleSelected, val deleteArticleSelected: DeleteArticleSelected) : ListContract.Presenter {
+class ListPresenter @Inject constructor(val getArticles: GetArticles, val insertArticleSelected: InsertArticleSelected, val deleteArticleSelected: DeleteArticleSelected, val subscriptions :CompositeDisposable) : ListContract.Presenter {
 
     private lateinit var view: ListContract.View
-
-    override fun subscribe() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    private val LOG_TAG = "ListPresenter"
 
     override fun unsubscribe() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        subscriptions.clear()
     }
 
     override fun attach(view: ListContract.View) {

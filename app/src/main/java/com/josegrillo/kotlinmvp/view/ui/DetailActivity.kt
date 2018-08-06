@@ -23,6 +23,11 @@ class DetailActivity : BaseActivity(), DetailContract.View {
 
     }
 
+    override fun onDestroy() {
+        presenter.unsubscribe()
+        super.onDestroy()
+    }
+
 
     override fun injectDependency() {
         val detailComponent = DaggerActivitiesComponent.builder()

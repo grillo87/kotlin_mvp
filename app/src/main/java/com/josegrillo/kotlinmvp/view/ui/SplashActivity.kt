@@ -46,6 +46,11 @@ class SplashActivity : BaseActivity(), SplashContract.View {
 
     }
 
+    override fun onDestroy() {
+        presenter.unsubscribe()
+        super.onDestroy()
+    }
+
 
     override fun defineAnimations() {
 

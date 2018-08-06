@@ -7,20 +7,17 @@ import com.josegrillo.kotlinmvp.domain.model.mapper.UserMapper
 import com.josegrillo.kotlinmvp.domain.usecase.InsertUser
 import com.josegrillo.kotlinmvp.domain.usecase.LoginUser
 import com.josegrillo.kotlinmvp.view.contracts.LoginContract
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class LoginPresenter @Inject constructor(val loginUser: LoginUser, val insertUser: InsertUser) : LoginContract.Presenter {
+class LoginPresenter @Inject constructor(val loginUser: LoginUser, val insertUser: InsertUser, val subscriptions :CompositeDisposable) : LoginContract.Presenter {
 
     private lateinit var view: LoginContract.View
     private val LOG_TAG = "LoginPresenter"
 
-    override fun subscribe() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
     override fun unsubscribe() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        subscriptions.clear()
     }
 
     override fun attach(view: LoginContract.View) {
@@ -48,7 +45,7 @@ class LoginPresenter @Inject constructor(val loginUser: LoginUser, val insertUse
         } else {
 
             this.view.showLoading()
-            loginUser.loginUser(user.email, user.password)
+            var subscribe = loginUser.loginUser(user.email, user.password)
                     .subscribeOn(Schedulers.io())
                     .subscribe(
                             { userResponse ->
@@ -74,6 +71,8 @@ class LoginPresenter @Inject constructor(val loginUser: LoginUser, val insertUse
                             }
                     )
 
+            subscriptions.add(subscribe)
+
 
         }
 
@@ -86,7 +85,7 @@ class LoginPresenter @Inject constructor(val loginUser: LoginUser, val insertUse
         val users: ArrayList<User> = ArrayList<User>()
         users.add(user)
 
-        insertUser.insertUser(users)
+        var subscribe = insertUser.insertUser(users)
                 .subscribeOn(Schedulers.io())
                 .subscribe(
                         { inserted ->
@@ -110,6 +109,8 @@ class LoginPresenter @Inject constructor(val loginUser: LoginUser, val insertUse
 
                         }
                 )
+
+        subscriptions.add(subscribe)
 
     }
 

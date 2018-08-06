@@ -25,6 +25,11 @@ class ListActivity : BaseActivity(), ListContract.View {
 
     }
 
+    override fun onDestroy() {
+        presenter.unsubscribe()
+        super.onDestroy()
+    }
+
     override fun injectDependency() {
         val listComponent = DaggerActivitiesComponent.builder()
                 .localRepositoryModule(LocalRepositoryModule(applicationContext))

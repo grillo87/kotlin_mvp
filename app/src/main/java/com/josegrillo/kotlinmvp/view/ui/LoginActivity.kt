@@ -95,6 +95,11 @@ class LoginActivity : BaseActivity(), LoginContract.View, View.OnClickListener {
         ToastUtils.showToastMessage(applicationContext, message)
     }
 
+    override fun onDestroy() {
+        presenter.unsubscribe()
+        super.onDestroy()
+    }
+
 
     override fun clearFormErrors() {
         activityLoginEmailEdittext.setError(null)

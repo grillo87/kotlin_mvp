@@ -25,6 +25,11 @@ class RegisterActivity : BaseActivity(), RegisterContract.View, View.OnClickList
 
     }
 
+    override fun onDestroy() {
+        presenter.unsubscribe()
+        super.onDestroy()
+    }
+
     override fun injectDependency() {
 
         val registerComponent = DaggerActivitiesComponent.builder()
@@ -51,6 +56,7 @@ class RegisterActivity : BaseActivity(), RegisterContract.View, View.OnClickList
 
     override fun showLoading() {
         dialog = DialogUtils.showLoadingDialog(this, resources.getString(R.string.loading_register_text), this.customFont)
+        dialog?.show()
     }
 
     override fun hideLoading() {
@@ -61,6 +67,13 @@ class RegisterActivity : BaseActivity(), RegisterContract.View, View.OnClickList
         val registerIntent = Intent().setClass(
                 this@RegisterActivity, LoginActivity::class.java)
         startActivity(registerIntent)
+        finish()
+    }
+
+    override fun navigateToList() {
+        val listIntent = Intent().setClass(
+                this@RegisterActivity, ListActivity::class.java)
+        startActivity(listIntent)
         finish()
     }
 
@@ -82,6 +95,14 @@ class RegisterActivity : BaseActivity(), RegisterContract.View, View.OnClickList
 
     override fun showErrorMessage(message: String) {
         ToastUtils.showToastMessage(applicationContext, message)
+    }
+
+    override fun showUnavailableError() {
+        ToastUtils.showToastMessage(applicationContext, resources.getString(R.string.unavailable_error_message))
+    }
+
+    override fun showUnexpectedError() {
+        ToastUtils.showToastMessage(applicationContext, resources.getString(R.string.unexpected_error_message))
     }
 
     override fun clearFormErrors() {
