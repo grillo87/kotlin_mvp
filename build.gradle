@@ -11,6 +11,7 @@ buildscript {
     ext.rxjava_version = '2.1.12'
     ext.rxandroid_version = '2.0.1'
     ext.glide_version = '4.0.0-RC1'
+    ext.logging_interceptor_version = '2.0.7'
 
 
 
@@ -31,6 +32,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
 }
 

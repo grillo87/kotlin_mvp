@@ -26,5 +26,7 @@
     <string name="email_error_format_message">Invalid format</string>
     <string name="password_error_format_message">Must have more than 4 characters</string>
     <string name="password_missmatch_error_message">Check password and confirm password</string>
+    <string name="unavailable_error_message">There has been a comunication error, please try again</string>
+    <string name="unexpected_error_message">There has been an unexpected error, please try again</string>
 
 </resources>

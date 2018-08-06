@@ -3,7 +3,6 @@ package com.josegrillo.kotlinmvp.view.presenter
 import com.josegrillo.kotlinmvp.domain.model.ArticleView
 import com.josegrillo.kotlinmvp.domain.usecase.DeleteArticleSelected
 import com.josegrillo.kotlinmvp.domain.usecase.GetArticles
-import com.josegrillo.kotlinmvp.domain.usecase.GetUser
 import com.josegrillo.kotlinmvp.domain.usecase.InsertArticleSelected
 import com.josegrillo.kotlinmvp.view.contracts.ListContract
 import javax.inject.Inject

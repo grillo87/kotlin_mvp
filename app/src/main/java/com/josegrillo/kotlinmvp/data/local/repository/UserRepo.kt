@@ -2,7 +2,7 @@ package com.josegrillo.kotlinmvp.data.local.repository
 
 import com.josegrillo.kotlinmvp.data.local.dao.UserDAO
 import com.josegrillo.kotlinmvp.data.local.interfaces.UserRepoInterface
-import com.josegrillo.kotlinmvp.domain.model.User
+import com.josegrillo.kotlinmvp.domain.model.database.User
 import io.reactivex.Observable
 import io.reactivex.Single
 import javax.inject.Inject

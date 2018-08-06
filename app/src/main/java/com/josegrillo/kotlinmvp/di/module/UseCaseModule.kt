@@ -2,6 +2,7 @@ package com.josegrillo.kotlinmvp.di.module
 
 import com.josegrillo.kotlinmvp.data.local.interfaces.ArticleRepoInterface
 import com.josegrillo.kotlinmvp.data.local.interfaces.UserRepoInterface
+import com.josegrillo.kotlinmvp.data.remote.AppApi
 import com.josegrillo.kotlinmvp.domain.usecase.*
 import dagger.Module
 import dagger.Provides
@@ -11,8 +12,8 @@ class UseCaseModule {
 
 
     @Provides
-    fun provideLoginUser(): LoginUser {
-        return LoginUser()
+    fun provideLoginUser(appApi: AppApi): LoginUser {
+        return LoginUser(appApi)
     }
 
     @Provides
@@ -21,8 +22,8 @@ class UseCaseModule {
     }
 
     @Provides
-    fun provideGetArticles(): GetArticles {
-        return GetArticles()
+    fun provideGetArticles(appApi: AppApi): GetArticles {
+        return GetArticles(appApi)
     }
 
     @Provides
@@ -31,8 +32,8 @@ class UseCaseModule {
     }
 
     @Provides
-    fun provideRegisterUser(): RegisterUser {
-        return RegisterUser()
+    fun provideRegisterUser(appApi: AppApi): RegisterUser {
+        return RegisterUser(appApi)
     }
 
     @Provides

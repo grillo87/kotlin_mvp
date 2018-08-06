@@ -1,7 +1,7 @@
 package com.josegrillo.kotlinmvp.domain.usecase
 
 import com.josegrillo.kotlinmvp.data.local.interfaces.UserRepoInterface
-import com.josegrillo.kotlinmvp.domain.model.User
+import com.josegrillo.kotlinmvp.domain.model.database.User
 import io.reactivex.Observable
 import javax.inject.Inject
 

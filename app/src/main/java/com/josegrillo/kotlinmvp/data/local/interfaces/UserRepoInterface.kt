@@ -1,6 +1,6 @@
 package com.josegrillo.kotlinmvp.data.local.interfaces
 
-import com.josegrillo.kotlinmvp.domain.model.User
+import com.josegrillo.kotlinmvp.domain.model.database.User
 import io.reactivex.Observable
 import io.reactivex.Single
 

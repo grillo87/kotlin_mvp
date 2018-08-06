@@ -50,7 +50,6 @@ class SplashPresenter @Inject constructor(val getUser: GetUser, val getArticleSe
                 .subscribe(
                         { _ ->
                             checkUserSession()
-
                         },
                         { error ->
                             Log.e(LOG_TAG, "Error Message: " + error.message)

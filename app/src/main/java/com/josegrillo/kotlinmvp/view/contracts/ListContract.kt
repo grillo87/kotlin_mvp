@@ -1,6 +1,5 @@
 package com.josegrillo.kotlinmvp.view.contracts
 
-import com.josegrillo.kotlinmvp.domain.model.Article
 import com.josegrillo.kotlinmvp.domain.model.ArticleView
 
 class ListContract {

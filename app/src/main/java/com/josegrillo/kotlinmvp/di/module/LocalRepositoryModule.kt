@@ -17,7 +17,7 @@ class LocalRepositoryModule constructor(val mApplication: Context) {
 
     @Provides
     @Singleton
-    fun provideAppDatabase(): AppDatabase = Room.databaseBuilder(mApplication, AppDatabase::class.java, AppConstants.APP_DB_NAME).build()
+    fun provideAppDatabase(): AppDatabase = Room.databaseBuilder(mApplication, AppDatabase::class.java, AppConstants.APP_DB_NAME).fallbackToDestructiveMigration().build()
 
     @Provides
     fun provideUserRepoHelper(appDatabase: AppDatabase): UserRepoInterface = UserRepo(appDatabase.usersDao())

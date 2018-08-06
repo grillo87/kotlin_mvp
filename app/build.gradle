@@ -41,6 +41,8 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
     implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
 
+    implementation "com.github.ihsanbal:LoggingInterceptor:$logging_interceptor_version"
+
     implementation "com.github.bumptech.glide:glide:$glide_version"
 
     testImplementation 'junit:junit:4.12'

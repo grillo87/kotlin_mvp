@@ -9,7 +9,6 @@ import com.josegrillo.kotlinmvp.di.module.ActivitiesModule
 import com.josegrillo.kotlinmvp.di.module.LocalRepositoryModule
 import com.josegrillo.kotlinmvp.view.base.BaseActivity
 import com.josegrillo.kotlinmvp.view.contracts.SplashContract
-import com.josegrillo.kotlinmvp.view.utils.DialogUtils
 import kotlinx.android.synthetic.main.activity_splash.*
 import java.util.*
 import javax.inject.Inject

@@ -1,4 +1,4 @@
-package com.josegrillo.kotlinmvp.domain.model
+package com.josegrillo.kotlinmvp.domain.model.database
 
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey

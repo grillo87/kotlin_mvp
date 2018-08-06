@@ -3,7 +3,6 @@ package com.josegrillo.kotlinmvp.view.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import com.josegrillo.kotlinmvp.R
 import com.josegrillo.kotlinmvp.di.component.DaggerActivitiesComponent
 import com.josegrillo.kotlinmvp.di.module.ActivitiesModule
@@ -49,6 +48,13 @@ class LoginActivity : BaseActivity(), LoginContract.View, View.OnClickListener {
         activityLoginRegisterButton.setOnClickListener(this)
     }
 
+    override fun navigateToList() {
+        val listIntent = Intent().setClass(
+                this@LoginActivity, ListActivity::class.java)
+        startActivity(listIntent)
+        finish()
+    }
+
     override fun navigateToRegister() {
         val loginIntent = Intent().setClass(
                 this@LoginActivity, RegisterActivity::class.java)
@@ -75,6 +81,14 @@ class LoginActivity : BaseActivity(), LoginContract.View, View.OnClickListener {
 
     override fun showPasswordError() {
         activityLoginEmailEdittext.setError(resources.getString(R.string.password_error_format_message))
+    }
+
+    override fun showUnavailableError() {
+        ToastUtils.showToastMessage(applicationContext, resources.getString(R.string.unavailable_error_message))
+    }
+
+    override fun showUnexpectedError() {
+        ToastUtils.showToastMessage(applicationContext, resources.getString(R.string.unexpected_error_message))
     }
 
     override fun showErrorMessage(message: String) {

@@ -1,7 +1,7 @@
 package com.josegrillo.kotlinmvp.data.local.dao
 
 import android.arch.persistence.room.*
-import com.josegrillo.kotlinmvp.domain.model.User
+import com.josegrillo.kotlinmvp.domain.model.database.User
 
 @Dao
 interface UserDAO {

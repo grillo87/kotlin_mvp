@@ -1,4 +1,7 @@
 package com.josegrillo.kotlinmvp.domain.usecase
 
-class GetArticles {
+import com.josegrillo.kotlinmvp.data.remote.AppApi
+import javax.inject.Inject
+
+class GetArticles @Inject constructor(private val appApi: AppApi) {
 }
