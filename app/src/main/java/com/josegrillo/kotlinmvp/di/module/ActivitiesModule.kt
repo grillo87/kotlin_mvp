@@ -29,13 +29,13 @@ class ActivitiesModule {
     }
 
     @Provides
-    fun provideListPresenter(getArticles: GetArticles, getArticleSelected: GetArticleSelected, insertArticleSelected: InsertArticleSelected, deleteArticleSelected: DeleteArticleSelected, loadUserInformation: LoadUserInformation, subscriptions: CompositeDisposable): ListContract.Presenter {
-        return ListPresenter(getArticles, getArticleSelected, insertArticleSelected, deleteArticleSelected, loadUserInformation, subscriptions)
+    fun provideListPresenter(getArticles: GetArticles, getArticleSelected: GetArticleSelected, insertArticleSelected: InsertArticleSelected, deleteArticleSelected: DeleteArticleSelected, loadUserInformation: LoadUserInformation, deleteUser: DeleteUser, subscriptions: CompositeDisposable): ListContract.Presenter {
+        return ListPresenter(getArticles, getArticleSelected, insertArticleSelected, deleteArticleSelected, loadUserInformation, deleteUser, subscriptions)
     }
 
     @Provides
-    fun provideDetailPresenter(loadArticleSelected: LoadArticleSelected, subscriptions: CompositeDisposable): DetailContract.Presenter {
-        return DetailPresenter(loadArticleSelected, subscriptions)
+    fun provideDetailPresenter(loadArticleSelected: LoadArticleSelected, loadUserInformation: LoadUserInformation, deleteUser: DeleteUser, subscriptions: CompositeDisposable): DetailContract.Presenter {
+        return DetailPresenter(loadArticleSelected, loadUserInformation, deleteUser, subscriptions)
     }
 
 

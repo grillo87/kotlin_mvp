@@ -15,9 +15,10 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class ListPresenter @Inject constructor(val getArticles: GetArticles, val getArticleSelected: GetArticleSelected, val insertArticleSelected: InsertArticleSelected, val deleteArticleSelected: DeleteArticleSelected, val loadUserInformation: LoadUserInformation, val subscriptions: CompositeDisposable) : ListContract.Presenter {
+class ListPresenter @Inject constructor(val getArticles: GetArticles, val getArticleSelected: GetArticleSelected, val insertArticleSelected: InsertArticleSelected, val deleteArticleSelected: DeleteArticleSelected, val loadUserInformation: LoadUserInformation, val deleteUser: DeleteUser, val subscriptions: CompositeDisposable) : ListContract.Presenter {
 
     private lateinit var view: ListContract.View
+    private lateinit var userInfo: User
     private val articlesList = ArrayList<Article>()
     private val LOG_TAG = "ListPresenter"
 
@@ -77,7 +78,7 @@ class ListPresenter @Inject constructor(val getArticles: GetArticles, val getArt
                 .subscribe(
                         { usersInformation ->
                             usersInformation?.let {
-                                it.forEach { Log.v(LOG_TAG, "userInfo " + it.id + " " + it.email + " " + it.idServer) }
+                                it.forEach { userInfo = it }
                             }
                         },
                         { error ->
@@ -140,4 +141,51 @@ class ListPresenter @Inject constructor(val getArticles: GetArticles, val getArt
 
         subscriptions.add(subscribe)
     }
+
+    override fun displayDialogInformation() {
+        this.view.showCloseSessionDialog()
+    }
+
+
+    override fun dismissDialogInformation() {
+        this.view.dismissDialog()
+    }
+
+    override fun loginUser() {
+        this.view.navigateToLogin()
+    }
+
+    override fun closeSession() {
+        this.deleteUserInformation()
+    }
+
+    override fun deleteUserInformation() {
+
+        val users = ArrayList<User>()
+        users.add(userInfo)
+
+        var subscribe = Observable.fromCallable {
+            deleteUser.deleteUser(users)
+        }.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({ result ->
+                    result.forEach {
+                        if (it) {
+                            this.view.dismissDialog()
+                            this.view.navigateToLogin()
+                        } else {
+                            this.view.dismissDialog()
+                            this.view.showUnexpectedError()
+                        }
+                    }
+                }, { error ->
+                    Log.e(LOG_TAG, "Error Message: " + error.message)
+                    this.view.dismissDialog()
+                    this.view.showUnexpectedError()
+                })
+
+        subscriptions.add(subscribe)
+
+    }
+
 }

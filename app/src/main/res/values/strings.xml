@@ -22,6 +22,10 @@
     <string name="loading_register_text">Signing up</string>
     <string name="loading_articles_text">Getting articles</string>
 
+    <string name="close_session_cancel_text">Cancel</string>
+    <string name="close_session_confirm_text">Confirm</string>
+    <string name="close_session_body_text">Do you want to close your session?</string>
+
     <string name="empty_inputs_message">Inputs cannot be empty</string>
     <string name="email_error_format_message">Invalid format</string>
     <string name="password_error_format_message">Must have more than 4 characters</string>

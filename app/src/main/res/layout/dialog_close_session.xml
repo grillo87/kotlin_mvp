@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/gradient_background">
+
+    <TextView
+        android:id="@+id/dialogCloseSessionConfirmTitleTextview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_close_session_content_height"
+        android:gravity="left|center"
+        android:maxLines="2"
+        android:paddingBottom="@dimen/dialog_close_session_padding"
+        android:paddingLeft="@dimen/dialog_close_session_padding_left"
+        android:paddingRight="@dimen/dialog_close_session_padding_right"
+        android:paddingTop="@dimen/dialog_close_session_padding"
+        android:text="@string/close_session_body_text"
+        android:textColor="@color/white" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_close_session_content_height"
+        android:gravity="right|center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/dialogCloseSessionConfirmTitleTextview">
+
+        <TextView
+            android:id="@+id/dialogCloseSessionConfirmCancelTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dialog_close_session_options_height"
+            android:layout_marginBottom="@dimen/dialog_close_session_options_upper_margins"
+            android:layout_marginEnd="@dimen/dialog_close_session_options_lateral_margins"
+            android:layout_marginLeft="@dimen/dialog_close_session_options_lateral_margins"
+            android:layout_marginRight="@dimen/dialog_close_session_options_lateral_margins"
+            android:layout_marginStart="@dimen/dialog_close_session_options_lateral_margins"
+            android:layout_marginTop="@dimen/dialog_close_session_options_upper_margins"
+            android:maxLines="1"
+            android:paddingBottom="@dimen/dialog_close_session_padding"
+            android:paddingRight="@dimen/dialog_close_session_padding_right"
+            android:paddingTop="@dimen/dialog_close_session_padding"
+            android:text="@string/close_session_cancel_text"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/dialogCloseSessionOptionsGuideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/dialogCloseSessionOptionsGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+
+        <TextView
+            android:id="@+id/dialogCloseSessionConfirmAcceptTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dialog_close_session_options_height"
+            android:layout_marginBottom="@dimen/dialog_close_session_options_upper_margins"
+            android:layout_marginEnd="@dimen/dialog_close_session_options_lateral_margins"
+            android:layout_marginLeft="@dimen/dialog_close_session_options_lateral_margins"
+            android:layout_marginRight="@dimen/dialog_close_session_options_lateral_margins"
+            android:layout_marginStart="@dimen/dialog_close_session_options_lateral_margins"
+            android:layout_marginTop="@dimen/dialog_close_session_options_upper_margins"
+            android:maxLines="1"
+            android:paddingBottom="@dimen/dialog_close_session_padding"
+            android:paddingRight="@dimen/dialog_close_session_padding_right"
+            android:paddingTop="@dimen/dialog_close_session_padding"
+            android:text="@string/close_session_confirm_text"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/dialogCloseSessionOptionsGuideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>

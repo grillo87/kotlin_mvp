@@ -47,5 +47,12 @@
     <dimen name="dialog_loading_body_text_size">14sp</dimen>
     <dimen name="dialog_loading_loading_size">60dp</dimen>
     <dimen name="dialog_loading_body_height">60dp</dimen>
+    <dimen name="dialog_close_session_content_height">60dp</dimen>
+    <dimen name="dialog_close_session_padding_left">16dp</dimen>
+    <dimen name="dialog_close_session_padding_right">32dp</dimen>
+    <dimen name="dialog_close_session_padding">5dp</dimen>
+    <dimen name="dialog_close_session_options_height">45dp</dimen>
+    <dimen name="dialog_close_session_options_upper_margins">8dp</dimen>
+    <dimen name="dialog_close_session_options_lateral_margins">16dp</dimen>
 
 </resources>
