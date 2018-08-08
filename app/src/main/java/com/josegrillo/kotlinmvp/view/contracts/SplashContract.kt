@@ -15,8 +15,6 @@ class SplashContract {
         fun initializeViewElements()
         fun navigateNextView(isEmpty: Boolean)
         fun checkUserSession()
-        fun checkArticleSelected()
-        fun deleteArticlesSelected()
 
     }
 

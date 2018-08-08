@@ -1,6 +1,7 @@
 package com.josegrillo.kotlinmvp.view.contracts
 
 import com.josegrillo.kotlinmvp.domain.model.ArticleView
+import com.josegrillo.kotlinmvp.domain.model.database.Article
 
 class ListContract {
 
@@ -9,8 +10,11 @@ class ListContract {
         fun showLoading()
         fun hideLoading()
         fun showErrorMessage(message: String)
-        fun setArticlesList(articles: Array<ArticleView>)
+        fun showUnavailableError()
+        fun showUnexpectedError()
+        fun setArticlesList(articles: ArrayList<ArticleView>)
         fun navigateToDetail()
+        fun onTouchArticle(view: android.view.View, position: Int)
 
 
     }
@@ -18,8 +22,10 @@ class ListContract {
     interface Presenter : BaseContract.Presenter<View> {
 
         fun loadArticles()
-        fun setArticleSelected(article: ArticleView)
-        fun insertArticleSelected(article: ArticleView)
+        fun checkArticleSelected()
+        fun loadUserInformation()
+        fun setArticleSelected(position: Int)
+        fun insertArticleSelected(article: Article)
         fun deleteArticlesSelected()
 
     }

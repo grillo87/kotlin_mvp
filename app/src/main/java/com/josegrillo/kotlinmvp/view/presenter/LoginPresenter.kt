@@ -7,11 +7,15 @@ import com.josegrillo.kotlinmvp.domain.model.mapper.UserMapper
 import com.josegrillo.kotlinmvp.domain.usecase.InsertUser
 import com.josegrillo.kotlinmvp.domain.usecase.LoginUser
 import com.josegrillo.kotlinmvp.view.contracts.LoginContract
+import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
+import io.reactivex.functions.Function
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class LoginPresenter @Inject constructor(val loginUser: LoginUser, val insertUser: InsertUser, val subscriptions :CompositeDisposable) : LoginContract.Presenter {
+class LoginPresenter @Inject constructor(val loginUser: LoginUser, val insertUser: InsertUser, val subscriptions: CompositeDisposable) : LoginContract.Presenter {
 
     private lateinit var view: LoginContract.View
     private val LOG_TAG = "LoginPresenter"
@@ -47,11 +51,13 @@ class LoginPresenter @Inject constructor(val loginUser: LoginUser, val insertUse
             this.view.showLoading()
             var subscribe = loginUser.loginUser(user.email, user.password)
                     .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(
                             { userResponse ->
                                 if (userResponse?.status == 200) {
 
                                     userResponse?.user?.let {
+                                        it.email = email
                                         insertUser(UserMapper.userApiToDatabase(it))
                                     }
 
@@ -76,7 +82,6 @@ class LoginPresenter @Inject constructor(val loginUser: LoginUser, val insertUse
 
         }
 
-
     }
 
 
@@ -85,30 +90,25 @@ class LoginPresenter @Inject constructor(val loginUser: LoginUser, val insertUse
         val users: ArrayList<User> = ArrayList<User>()
         users.add(user)
 
-        var subscribe = insertUser.insertUser(users)
-                .subscribeOn(Schedulers.io())
-                .subscribe(
-                        { inserted ->
-                            if (inserted) {
-
-                                this.view.hideLoading()
-                                this.view.navigateToList()
-
-                            } else {
-
-                                this.view.hideLoading()
-                                this.view.showUnexpectedError()
-                            }
-                        },
-                        { error ->
-                            Log.e(LOG_TAG, "Error Message: " + error.message)
+        var subscribe = Observable.fromCallable {
+            insertUser.insertUser(users)
+        }.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({ result ->
+                    result.forEach {
+                        if (it) {
                             this.view.hideLoading()
-                            error?.message?.let {
-                                this.view.showErrorMessage(it)
-                            }
-
+                            this.view.navigateToList()
+                        } else {
+                            this.view.hideLoading()
+                            this.view.showUnexpectedError()
                         }
-                )
+                    }
+                }, { error ->
+                    Log.e(LOG_TAG, "Error Message: " + error.message)
+                    this.view.hideLoading()
+                    this.view.showUnexpectedError()
+                })
 
         subscriptions.add(subscribe)
 

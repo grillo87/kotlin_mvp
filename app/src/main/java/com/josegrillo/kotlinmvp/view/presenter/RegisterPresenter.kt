@@ -7,6 +7,8 @@ import com.josegrillo.kotlinmvp.domain.model.mapper.UserMapper
 import com.josegrillo.kotlinmvp.domain.usecase.InsertUser
 import com.josegrillo.kotlinmvp.domain.usecase.RegisterUser
 import com.josegrillo.kotlinmvp.view.contracts.RegisterContract
+import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
@@ -50,11 +52,13 @@ class RegisterPresenter @Inject constructor(val registerUser: RegisterUser, val 
             this.view.showLoading()
             var subscribe = registerUser.registerUser(user.email, user.password)
                     .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(
                             { userResponse ->
                                 if (userResponse?.status == 200) {
 
                                     userResponse?.user?.let {
+                                        it.email = email
                                         insertUser(UserMapper.userApiToDatabase(it))
                                     }
 
@@ -86,30 +90,25 @@ class RegisterPresenter @Inject constructor(val registerUser: RegisterUser, val 
         val users: ArrayList<User> = ArrayList<User>()
         users.add(user)
 
-        var subscribe = insertUser.insertUser(users)
-                .subscribeOn(Schedulers.io())
-                .subscribe(
-                        { inserted ->
-                            if (inserted) {
-
-                                this.view.hideLoading()
-                                this.view.navigateToList()
-
-                            } else {
-
-                                this.view.hideLoading()
-                                this.view.showUnexpectedError()
-                            }
-                        },
-                        { error ->
-                            Log.e(LOG_TAG, "Error Message: " + error.message)
+        var subscribe = Observable.fromCallable {
+            insertUser.insertUser(users)
+        }.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({ result ->
+                    result.forEach {
+                        if (it) {
                             this.view.hideLoading()
-                            error?.message?.let {
-                                this.view.showErrorMessage(it)
-                            }
-
+                            this.view.navigateToList()
+                        } else {
+                            this.view.hideLoading()
+                            this.view.showUnexpectedError()
                         }
-                )
+                    }
+                }, { error ->
+                    Log.e(LOG_TAG, "Error Message: " + error.message)
+                    this.view.hideLoading()
+                    this.view.showUnexpectedError()
+                })
 
         subscriptions.add(subscribe)
 

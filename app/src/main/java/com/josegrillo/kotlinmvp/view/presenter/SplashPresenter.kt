@@ -9,7 +9,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class SplashPresenter @Inject constructor(val getUser: GetUser, val getArticleSelected: GetArticleSelected, val deleteArticleSelected: DeleteArticleSelected, val subscriptions :CompositeDisposable) : SplashContract.Presenter {
+class SplashPresenter @Inject constructor(val getUser: GetUser, val subscriptions: CompositeDisposable) : SplashContract.Presenter {
 
     private lateinit var view: SplashContract.View
     private val LOG_TAG = "SplashPresenter"
@@ -44,39 +44,6 @@ class SplashPresenter @Inject constructor(val getUser: GetUser, val getArticleSe
 
         subscriptions.add(subscribe)
 
-    }
-
-    override fun deleteArticlesSelected() {
-        var subscribe = deleteArticleSelected.deleteArticlesRepo().subscribeOn(Schedulers.io())
-                .subscribe(
-                        { _ ->
-                            checkUserSession()
-                        },
-                        { error ->
-                            Log.e(LOG_TAG, "Error Message: " + error.message)
-                        }
-                )
-
-        subscriptions.add(subscribe)
-    }
-
-    override fun checkArticleSelected() {
-        var subscribe = getArticleSelected.isArticleRepoEmpty().subscribeOn(Schedulers.io())
-                .subscribe(
-                        { articleRepoEmpty ->
-                            if (!articleRepoEmpty) {
-                                deleteArticlesSelected()
-                            } else {
-                                checkUserSession()
-                            }
-
-                        },
-                        { error ->
-                            Log.e(LOG_TAG, "Error Message: " + error.message)
-                        }
-                )
-
-        subscriptions.add(subscribe)
     }
 
     override fun navigateNextView(isEmpty: Boolean) {

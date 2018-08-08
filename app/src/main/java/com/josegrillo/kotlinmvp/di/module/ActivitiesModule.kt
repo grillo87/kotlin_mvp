@@ -14,8 +14,8 @@ class ActivitiesModule {
     fun provideSubscription(): CompositeDisposable = CompositeDisposable()
 
     @Provides
-    fun provideSplashPresenter(getUser: GetUser, getArticleSelected: GetArticleSelected, deleteArticleSelected: DeleteArticleSelected, subscriptions: CompositeDisposable): SplashContract.Presenter {
-        return SplashPresenter(getUser, getArticleSelected, deleteArticleSelected, subscriptions)
+    fun provideSplashPresenter(getUser: GetUser, subscriptions: CompositeDisposable): SplashContract.Presenter {
+        return SplashPresenter(getUser, subscriptions)
     }
 
     @Provides
@@ -29,13 +29,13 @@ class ActivitiesModule {
     }
 
     @Provides
-    fun provideListPresenter(getArticles: GetArticles, insertArticleSelected: InsertArticleSelected, deleteArticleSelected: DeleteArticleSelected, subscriptions: CompositeDisposable): ListContract.Presenter {
-        return ListPresenter(getArticles, insertArticleSelected, deleteArticleSelected, subscriptions)
+    fun provideListPresenter(getArticles: GetArticles, getArticleSelected: GetArticleSelected, insertArticleSelected: InsertArticleSelected, deleteArticleSelected: DeleteArticleSelected, loadUserInformation: LoadUserInformation, subscriptions: CompositeDisposable): ListContract.Presenter {
+        return ListPresenter(getArticles, getArticleSelected, insertArticleSelected, deleteArticleSelected, loadUserInformation, subscriptions)
     }
 
     @Provides
-    fun provideDetailPresenter(getArticleSelected: GetArticleSelected, subscriptions: CompositeDisposable): DetailContract.Presenter {
-        return DetailPresenter(getArticleSelected, subscriptions)
+    fun provideDetailPresenter(loadArticleSelected: LoadArticleSelected, subscriptions: CompositeDisposable): DetailContract.Presenter {
+        return DetailPresenter(loadArticleSelected, subscriptions)
     }
 
 

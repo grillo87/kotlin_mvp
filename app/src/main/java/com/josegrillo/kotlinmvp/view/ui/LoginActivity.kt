@@ -80,7 +80,7 @@ class LoginActivity : BaseActivity(), LoginContract.View, View.OnClickListener {
     }
 
     override fun showPasswordError() {
-        activityLoginEmailEdittext.setError(resources.getString(R.string.password_error_format_message))
+        activityLoginPasswordEdittext.setError(resources.getString(R.string.password_error_format_message))
     }
 
     override fun showUnavailableError() {

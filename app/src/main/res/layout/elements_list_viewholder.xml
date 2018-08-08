@@ -6,6 +6,7 @@
     android:background="@android:color/transparent">
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/elementListParentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="@dimen/element_list_container_margins"

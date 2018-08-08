@@ -91,7 +91,7 @@ class SplashActivity : BaseActivity(), SplashContract.View {
         val task = object : TimerTask() {
             override fun run() {
 
-                presenter.checkArticleSelected()
+                presenter.checkUserSession()
 
             }
         }

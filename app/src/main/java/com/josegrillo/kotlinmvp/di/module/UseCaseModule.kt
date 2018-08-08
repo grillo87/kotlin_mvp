@@ -37,6 +37,11 @@ class UseCaseModule {
     }
 
     @Provides
+    fun loadUserInformation(userRepoHelper: UserRepoInterface): LoadUserInformation {
+        return LoadUserInformation(userRepoHelper)
+    }
+
+    @Provides
     fun provideInsertUser(userRepoHelper: UserRepoInterface): InsertUser {
         return InsertUser(userRepoHelper)
     }
@@ -54,6 +59,11 @@ class UseCaseModule {
     @Provides
     fun provideDeleteArticleSelected(articleRepoHelper: ArticleRepoInterface): DeleteArticleSelected {
         return DeleteArticleSelected(articleRepoHelper)
+    }
+
+    @Provides
+    fun provideLoadArticleSelected(articleRepoHelper: ArticleRepoInterface): LoadArticleSelected {
+        return LoadArticleSelected(articleRepoHelper)
     }
 
 
