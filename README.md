@@ -1,4 +1,4 @@
-<title>Kotlin MVP</title>
+<b>Kotlin MVP</b>
 
 <img src="https://gitlab.com/grillo87/kotlin_mvp/raw/master/app/src/main/ic_launcher-web.png" alt="" style="max-width:100%;">
 
@@ -16,7 +16,7 @@ The information displayed on the articles comes from the official Kotlin webpage
 
 The app is available on Google Play on:</br></br>
 
-<a href="https://play.google.com/store/apps/details?id=com.josegrillo.kotlinmvp">Google Play Link</a></br></br>
+<a href="https://play.google.com/store/apps/details?id=com.josegrillo.kotlinmvp"><img src="https://cdn-images-1.medium.com/max/1920/1*OIIv4FEjJQMqh-zEPhtlYA.png" title="Google Play Link" alt="Google"></a>
 
 The app uses the following libraries:</br></br>
 
