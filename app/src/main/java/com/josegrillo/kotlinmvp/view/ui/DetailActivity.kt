@@ -3,7 +3,9 @@ package com.josegrillo.kotlinmvp.view.ui
 import android.app.Dialog
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.text.Html
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -71,9 +73,19 @@ class DetailActivity : BaseActivity(), DetailContract.View, View.OnClickListener
     override fun setArticleInfo(articleView: ArticleView) {
 
         activityDetailContentTitleTextview.text = articleView.title
-        activityDetailContentTextview.text = articleView.content
         activityDetailAreaTextview.text = articleView.area
         GlideApp.with(this).load(articleView.imageUrl).into(activityDetailContentImageview)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+
+            activityDetailContentTextview.text = Html.fromHtml(articleView.content, Html.FROM_HTML_MODE_LEGACY)
+
+
+        } else {
+
+            activityDetailContentTextview.text = Html.fromHtml(articleView.content)
+
+        }
 
     }
 

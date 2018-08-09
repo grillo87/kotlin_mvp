@@ -56,6 +56,9 @@
             android:layout_marginTop="@dimen/element_list_titles_upper_margins"
             android:gravity="center|left"
             android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/activity_detail_content_title_textsize"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/elementListAreaTextview"
             app:layout_constraintStart_toStartOf="@+id/elementListViewholderGuideline"
             app:layout_constraintTop_toTopOf="parent" />
@@ -69,6 +72,8 @@
             android:layout_marginStart="@dimen/element_list_titles_lateral_margins"
             android:gravity="center|left"
             android:maxLines="1"
+            android:textColor="@color/fire_bush"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/elementListViewholderGuideline"
             app:layout_constraintTop_toBottomOf="@+id/elementListTitleTextview" />

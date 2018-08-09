@@ -54,5 +54,6 @@
     <dimen name="dialog_close_session_options_height">45dp</dimen>
     <dimen name="dialog_close_session_options_upper_margins">8dp</dimen>
     <dimen name="dialog_close_session_options_lateral_margins">16dp</dimen>
+    <dimen name="activity_detail_content_title_textsize">16sp</dimen>
 
 </resources>

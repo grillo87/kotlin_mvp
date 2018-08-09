@@ -58,6 +58,9 @@
         android:layout_marginTop="@dimen/activity_detail_content_titles_upper_margins"
         android:gravity="center|left"
         android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/activity_detail_content_title_textsize"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/activityDetailAreaTextview"
         app:layout_constraintStart_toStartOf="@+id/activityDetailVerticalHeaderGuideline"
         app:layout_constraintTop_toBottomOf="@+id/activityDetailToolbar" />
@@ -71,6 +74,8 @@
         android:layout_marginStart="@dimen/activity_detail_content_titles_lateral_margins"
         android:gravity="center|left"
         android:maxLines="1"
+        android:textColor="@color/fire_bush"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/activityDetailHorizontalHeaderGuideline"
         app:layout_constraintStart_toStartOf="@+id/activityDetailVerticalHeaderGuideline"
         app:layout_constraintTop_toBottomOf="@+id/activityDetailContentTitleTextview" />
