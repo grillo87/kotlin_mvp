@@ -1,5 +1,7 @@
 <title>Kotlin MVP</title>
 
+<img src="https://gitlab.com/grillo87/kotlin_mvp/raw/master/app/src/main/ic_launcher-web.png" alt="" style="max-width:100%;">
+
 <body>
 <b>Demo App developed Kotlin for Android</b></br></br>
 
@@ -47,10 +49,13 @@ You could find me at LinkedIn on:</br></b>
 <img src="https://gitlab.com/grillo87/kotlin_mvp/raw/master/screenshots/Screenshot_1533822989.png">
 </td>
 <td>
-<img src="https://gitlab.com/grillo87/kotlin_mvp/blob/master/screenshots/Screenshot_1533825907.png">
+<img src="https://gitlab.com/grillo87/kotlin_mvp/raw/master/screenshots/Screenshot_1533822992.png">
 </td>
 <td>
-<img src="https://gitlab.com/grillo87/kotlin_mvp/blob/master/screenshots/Screenshot_1533825912.png">
+<img src="https://gitlab.com/grillo87/kotlin_mvp/raw/master/screenshots/Screenshot_1533825907.png">
+</td>
+<td>
+<img src="https://gitlab.com/grillo87/kotlin_mvp/raw/master/screenshots/Screenshot_1533825912.png">
 </td>
 </tr>
 </table>
