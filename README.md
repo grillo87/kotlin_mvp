@@ -23,20 +23,20 @@ The app uses the following libraries:</br></br>
 - <a href="https://github.com/google/dagger">Dagger2</a></br>
 - <a href="https://github.com/pnikosis/materialish-progress">Material-ish Progress</a></br>
 - <a href="https://developer.android.com/topic/libraries/architecture/adding-components">Room</a></br></br>
-- <a href="https://github.com/square/retrofit">Retrofit2</a></br></br>
-- <a href="https://github.com/ReactiveX/RxJava">RxJava: Reactive Extensions for the JVM</a></br></br>
-- <a href="https://github.com/ReactiveX/RxAndroid">RxAndroid: Reactive Extensions for Android</a></br></br>
-- <a href="https://github.com/ihsanbal/LoggingInterceptor">LoggingInterceptor - Interceptor for OkHttp3 with pretty logger</a></br></br>
-- <a href="https://github.com/bumptech/glide">Glide</a></br></br>
+- <a href="https://github.com/square/retrofit">Retrofit2</a></br>
+- <a href="https://github.com/ReactiveX/RxJava">RxJava: Reactive Extensions for the JVM</a></br>
+- <a href="https://github.com/ReactiveX/RxAndroid">RxAndroid: Reactive Extensions for Android</a></br>
+- <a href="https://github.com/ihsanbal/LoggingInterceptor">LoggingInterceptor - Interceptor for OkHttp3 with pretty logger</a></br>
+- <a href="https://github.com/bumptech/glide">Glide</a></br>
 
 As reference for the definition of the architecture of the project the following resources were used as reference:</br></br>
 
 - <a href="https://github.com/MindorksOpenSource/android-kotlin-mvp-architecture">Android Kotlin MVP Architecture: Sample App</a></br>
-- <a href="https://github.com/mcatta/RoomDagger2Demo">RoomDagger2Demo</a></br></br>
-- <a href="https://medium.com/google-developers/7-steps-to-room-27a5fe5f99b2">7 Steps To Room</a></br></br>
+- <a href="https://github.com/mcatta/RoomDagger2Demo">RoomDagger2Demo</a></br>
+- <a href="https://medium.com/google-developers/7-steps-to-room-27a5fe5f99b2">7 Steps To Room</a></br>
 - <a href="https://medium.com/@ogulcan/kotlin-mvp-dagger-2-retrofit-sample-android-application-e6fe3af7acd">Kotlin + MVP + Dagger 2 + Retrofit = Sample Android Application</a></br>
-- <a href="https://proandroiddev.com/mvp-architecture-with-kotlin-dagger-2-retrofit-rxandroid-and-databinding-17bffe27393d">MVP Architecture with Kotlin-Dagger 2, Retrofit, RxAndroid and DataBinding</a></br></br>
-- <a href="https://antonioleiva.com/mvp-android/">MVP for Android: how to organize the presentation layer</a></br></br>
+- <a href="https://proandroiddev.com/mvp-architecture-with-kotlin-dagger-2-retrofit-rxandroid-and-databinding-17bffe27393d">MVP Architecture with Kotlin-Dagger 2, Retrofit, RxAndroid and DataBinding</a></br>
+- <a href="https://antonioleiva.com/mvp-android/">MVP for Android: how to organize the presentation layer</a></br>
 
 You could find me at LinkedIn on:</br></b>
 
