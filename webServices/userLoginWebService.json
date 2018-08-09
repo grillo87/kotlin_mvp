@@ -1,0 +1,21 @@
+## User Login [/userLogin]
+
+### User Login [POST]
+
+
++ Request (application/json)
+
+        {
+            "email": "test@email.com",
+            "password": "123456"
+        }
+
++ Response 201 (application/json)
+
+
+        {
+            "status": 200,
+            "user": {
+                    "id": 1
+                }
+        }

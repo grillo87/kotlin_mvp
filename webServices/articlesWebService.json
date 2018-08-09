@@ -1,0 +1,36 @@
+## Articles Collection [/articles]
+
+### List All Articles [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "idServer": 1,
+                "title": "Kotlin for Android",
+                "area": "Overview",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Kotlin-logo.svg/2000px-Kotlin-logo.svg.png",
+                "content": "<p>Kotlin is a great fit for developing Android applications, bringing all of the advantages of a modern language to the Android platform without introducing any new restrictions:</p><ul><li><strong>Compatibility:</strong> Kotlin is fully compatible with JDK 6, ensuring that Kotlin applications can run on older Android devices with no issues. The Kotlin tooling is fully supported in Android Studio and compatible with the Android build system.</li><li><strong>Performance:</strong> A Kotlin application runs as fast as an equivalent Java one, thanks to very similar bytecode structure. With Kotlin's support for inline functions, code using lambdas often runs even faster than the same code written in Java.</li><li><strong>Interoperability:</strong> Kotlin is 100% interoperable with Java, allowing to use all existing Android libraries in a Kotlin application. This includes annotation processing, so databinding and Dagger work too.</li><li><strong>Footprint:</strong> Kotlin has a very compact runtime library, which can be further reduced through the use of ProGuard. In a real application, the Kotlin runtime adds only a few hundred methods and less than 100K to the size of the .apk file.</li><li><strong>Compilation Time:</strong> Kotlin supports efficient incremental compilation, so while there's some additional overhead for clean builds, incremental builds are usually as fast or faster than with Java.</li><li><strong>Learning Curve:</strong> For a Java developer, getting started with Kotlin is very easy. The automated Java to Kotlin converter included in the Kotlin plugin helps with the first steps. Kotlin Koans offer a guide through the key features of the language with a series of interactive exercises.</li></ul>"
+            },
+            {
+                "idServer": 2,
+                "title": "Basic Types",
+                "area": "Basics",
+                "imageUrl": "https://www.muyseguridad.net/wp-content/uploads/2018/03/editores-de-texto.jpg",
+                "content": "<p>In Kotlin, everything is an object in the sense that we can call member functions and properties on any variable. Some of the types can have a special internal representation - for example, numbers, characters and booleans can be represented as primitive values at runtime - but to the user they look like ordinary classes. In this section we describe the basic types used in Kotlin: numbers, characters, booleans, arrays, and strings.</p><h2>Numbers</h2><p>Kotlin handles numbers in a way close to Java, but not exactly the same. For example, there are no implicit widening conversions for numbers, and literals are slightly different in some cases.</p><h2>Characters</h2><p>Characters are represented by the type&nbsp;<code>Char</code>. They can not be treated directly as numbers.</p><h2>Booleans</h2><p>The type&nbsp;<code>Boolean</code>&nbsp;represents booleans, and has two values:&nbsp;<em>true</em>&nbsp;and&nbsp;<em>false</em>.Booleans are boxed if a nullable reference is needed.</p><h2>Arrays</h2><p>Arrays in Kotlin are represented by the&nbsp;<code>Array</code>&nbsp;class, that has&nbsp;<code>get</code>&nbsp;and&nbsp;<code>set</code>&nbsp;functions (that turn into&nbsp;<code>[]</code>by operator overloading conventions), and&nbsp;<code>size</code>&nbsp;property, along with a few other useful member functions.</p><h2>Strings</h2><p>Strings are represented by the type&nbsp;<code>String</code>. Strings are immutable. Elements of a string are characters that can be accessed by the indexing operation:&nbsp;<code>s[i]</code>.</p><p>&nbsp;</p><p>Image from&nbsp;https://www.muyseguridad.net/2018/03/20/editores-texto-linux-unix-problemas-seguridad/</p>"
+            },
+            {
+                "idServer": 3,
+                "title": "Data Classes",
+                "area": "Classes and Objects",
+                "imageUrl": "https://acmupm.es/wp-content/uploads/2018/03/Kotlin-for-Android-development.png",
+                "content": "<p>We frequently create classes whose main purpose is to hold data. In such a class some standard functionality and utility functions are often mechanically derivable from the data. In Kotlin, this is called a&nbsp;<em>data class</em>&nbsp;and is marked as&nbsp;<code>data</code></p>"
+            },
+            {
+                "idServer": 4,
+                "title": "Lambdas",
+                "area": "Functions and Lambdas",
+                "imageUrl": "https://static1.squarespace.com/static/51814c87e4b0c1fda9c1fc50/t/5b1aa6de0e2e72eb6ae78874/1528473315906/600px-AWS_Lambda_logo.svg.png?format=300w",
+                "content": "<p>Kotlin functions are&nbsp;<em>first-class</em></a>, which means that they can be stored in variables and data structures, passed as arguments to and returned from other&nbsp;higher-order functions</a>. You can operate with functions in any way that is possible for other non-function values.</p><p>To facilitate this, Kotlin, as a statically typed programming language, uses a family of&nbsp;function types</a>&nbsp;to represent functions and provides a set of specialized language constructs, such as&nbsp;lambda expressions</a>.</p>"
+            }
+        ]
