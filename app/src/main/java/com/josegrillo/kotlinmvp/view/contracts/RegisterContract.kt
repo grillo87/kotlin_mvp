@@ -8,7 +8,6 @@ class RegisterContract {
 
         fun showLoading()
         fun hideLoading()
-        fun navigateToLogin()
         fun navigateToList()
         fun showEmptyError()
         fun showEmailError()
@@ -24,7 +23,6 @@ class RegisterContract {
     interface Presenter : BaseContract.Presenter<View> {
 
         fun registerUser(email: String, password: String, confirmPassword: String)
-        fun loginUser()
         fun insertUser(user: User)
 
     }

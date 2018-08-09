@@ -113,7 +113,8 @@ class DetailPresenter @Inject constructor(val loadArticleSelected: LoadArticleSe
         this.deleteUserInformation()
     }
 
-    override fun listArticles() {
-        this.view.navigateToList()
+    override fun openGitlab() {
+        this.view.redirectToGitlab()
     }
+
 }

@@ -35,31 +35,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/activityListProfileImageview"
-        android:layout_width="@dimen/toolbar_logout_width"
-        android:layout_height="0dp"
-        android:layout_marginBottom="@dimen/toolbar_profile_imageview_margins"
-        android:layout_marginEnd="@dimen/toolbar_profile_imageview_margins"
-        android:layout_marginRight="@dimen/toolbar_profile_imageview_margins"
-        android:layout_marginTop="@dimen/toolbar_profile_imageview_margins"
-        android:scaleType="centerInside"
-        android:src="@drawable/logout_icon"
-        app:layout_constraintBottom_toBottomOf="@+id/activityListToolBar"
-        app:layout_constraintEnd_toEndOf="@+id/activityListToolBar"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/activityListTitleTextview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/toolbar_title_upper_margins"
-        android:layout_marginLeft="@dimen/toolbar_title_lateral_margins"
-        android:layout_marginStart="@dimen/toolbar_title_lateral_margins"
-        android:layout_marginTop="@dimen/toolbar_title_upper_margins"
-        android:text="@string/kotlin_list_title"
-        android:textSize="@dimen/tootlbar_title_textsize"
-        app:layout_constraintBottom_toBottomOf="@+id/activityListToolBar"
-        app:layout_constraintStart_toStartOf="@+id/activityListToolBar"
-        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

@@ -113,8 +113,4 @@ class RegisterPresenter @Inject constructor(val registerUser: RegisterUser, val 
         subscriptions.add(subscribe)
 
     }
-
-    override fun loginUser() {
-        this.view.navigateToLogin()
-    }
 }

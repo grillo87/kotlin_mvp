@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/actionGitlab"
+        android:title="@string/gitlab_code_text"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/actionCloseSession"
+        android:title="@string/close_session_text"
+        app:showAsAction="never" />
+
+</menu>

@@ -188,4 +188,8 @@ class ListPresenter @Inject constructor(val getArticles: GetArticles, val getArt
 
     }
 
+    override fun openGitlab() {
+        this.view.redirectToGitlab()
+    }
+
 }

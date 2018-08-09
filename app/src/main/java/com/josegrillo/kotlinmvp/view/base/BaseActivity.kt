@@ -4,10 +4,11 @@ import android.app.Activity
 import android.app.Dialog
 import android.graphics.Typeface
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import com.josegrillo.kotlinmvp.base.KotlinApplication
 import com.josegrillo.kotlinmvp.view.utils.ScreenUtils
 
-open class BaseActivity : Activity() {
+open class BaseActivity : AppCompatActivity() {
 
     var customFont: Typeface? = null
     var dialog: Dialog? = null
@@ -23,6 +24,7 @@ open class BaseActivity : Activity() {
         setStatusBar()
         setAppOrientation()
         initializeOnClickListeners()
+        initializeSupportActionBar()
 
     }
 
@@ -49,5 +51,7 @@ open class BaseActivity : Activity() {
     open fun injectDependency() {}
 
     open fun initializeOnClickListeners() {}
+
+    open fun initializeSupportActionBar() {}
 
 }

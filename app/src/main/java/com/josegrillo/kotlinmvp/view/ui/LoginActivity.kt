@@ -59,7 +59,6 @@ class LoginActivity : BaseActivity(), LoginContract.View, View.OnClickListener {
         val loginIntent = Intent().setClass(
                 this@LoginActivity, RegisterActivity::class.java)
         startActivity(loginIntent)
-        finish()
     }
 
     override fun showLoading() {

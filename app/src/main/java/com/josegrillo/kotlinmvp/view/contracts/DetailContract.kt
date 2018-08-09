@@ -8,8 +8,8 @@ class DetailContract {
 
         fun setArticleInfo(articleView: ArticleView)
         fun showUnexpectedError()
-        fun navigateToList()
         fun showCloseSessionDialog()
+        fun redirectToGitlab()
         fun dismissDialog()
         fun navigateToLogin()
 
@@ -21,10 +21,10 @@ class DetailContract {
         fun loadUserInformation()
         fun deleteUserInformation()
         fun loginUser()
-        fun listArticles()
         fun displayDialogInformation()
         fun dismissDialogInformation()
         fun closeSession()
+        fun openGitlab()
 
     }
 

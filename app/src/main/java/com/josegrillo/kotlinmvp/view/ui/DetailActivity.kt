@@ -2,7 +2,11 @@ package com.josegrillo.kotlinmvp.view.ui
 
 import android.app.Dialog
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.Window
 import android.widget.TextView
@@ -16,6 +20,7 @@ import com.josegrillo.kotlinmvp.view.base.BaseActivity
 import com.josegrillo.kotlinmvp.view.contracts.DetailContract
 import com.josegrillo.kotlinmvp.view.utils.ToastUtils
 import kotlinx.android.synthetic.main.activity_detail.*
+import kotlinx.android.synthetic.main.activity_list.*
 import javax.inject.Inject
 
 class DetailActivity : BaseActivity(), DetailContract.View, View.OnClickListener {
@@ -38,6 +43,20 @@ class DetailActivity : BaseActivity(), DetailContract.View, View.OnClickListener
         super.onDestroy()
     }
 
+    override fun initializeSupportActionBar() {
+
+        setSupportActionBar(activityDetailToolbar)
+        supportActionBar?.title = resources.getString(R.string.kotlin_detail_title)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }
+
 
     override fun injectDependency() {
         val detailComponent = DaggerActivitiesComponent.builder()
@@ -49,31 +68,13 @@ class DetailActivity : BaseActivity(), DetailContract.View, View.OnClickListener
         presenter.attach(this)
     }
 
-
-    override fun setCustomFonts() {
-        activityDetailTitleTextview.setTypeface(this.customFont)
-    }
-
-    override fun initializeOnClickListeners() {
-        this.activityDetailBackImageview.setOnClickListener(this)
-        this.activityDetailProfileImageview.setOnClickListener(this)
-    }
-
     override fun setArticleInfo(articleView: ArticleView) {
 
-        activityDetailTitleTextview.text = articleView.title
         activityDetailContentTitleTextview.text = articleView.title
         activityDetailContentTextview.text = articleView.content
         activityDetailAreaTextview.text = articleView.area
         GlideApp.with(this).load(articleView.imageUrl).into(activityDetailContentImageview)
 
-    }
-
-    override fun navigateToList() {
-        val detailIntent = Intent().setClass(
-                this@DetailActivity, ListActivity::class.java)
-        startActivity(detailIntent)
-        finish()
     }
 
     override fun showUnexpectedError() {
@@ -107,11 +108,19 @@ class DetailActivity : BaseActivity(), DetailContract.View, View.OnClickListener
         dialogCloseSession?.dismiss()
     }
 
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+
+            R.id.actionGitlab -> presenter.openGitlab()
+            R.id.actionCloseSession -> presenter.displayDialogInformation()
+        }
+
+
+        return false
+    }
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            activityDetailBackImageview.id -> presenter.listArticles()
-            activityDetailProfileImageview.id -> presenter.displayDialogInformation()
             dialogCloseSessionAcceptTextview?.id -> presenter.closeSession()
             dialogCloseSessionCancelTextview?.id -> presenter.dismissDialogInformation()
         }
@@ -122,6 +131,13 @@ class DetailActivity : BaseActivity(), DetailContract.View, View.OnClickListener
                 this@DetailActivity, LoginActivity::class.java)
         startActivity(loginIntent)
         finish()
+    }
+
+    override fun redirectToGitlab() {
+
+        val gitlabIntent = Intent(Intent.ACTION_VIEW, Uri.parse(resources.getString(R.string.gitlab_url_repository)))
+        startActivity(gitlabIntent)
+
     }
 
 }

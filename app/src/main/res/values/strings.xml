@@ -6,9 +6,7 @@
     <string name="mvp_subtitle_text">M V P</string>
     <string name="developed_by_text">Developed by\nJosé Grillo</string>
 
-
     <string name="login_title_text">Login</string>
-
 
     <string name="register_title_text">Register</string>
     <string name="button_register_text">Sign Up</string>
@@ -17,6 +15,7 @@
     <string name="form_confirm_password_text">Confirm Password</string>
     <string name="button_login_text">Sign In</string>
     <string name="kotlin_list_title">Kotlin Elements</string>
+    <string name="kotlin_detail_title">Article Detail</string>
 
     <string name="loading_login_text">Signing in</string>
     <string name="loading_register_text">Signing up</string>
@@ -32,5 +31,10 @@
     <string name="password_missmatch_error_message">Check password and confirm password</string>
     <string name="unavailable_error_message">There has been a comunication error, please try again</string>
     <string name="unexpected_error_message">There has been an unexpected error, please try again</string>
+
+    <string name="gitlab_code_text">Gitlab</string>
+    <string name="close_session_text">Close Session</string>
+
+    <string name="gitlab_url_repository">https://gitlab.com/grillo87/kotlin_mvp</string>
 
 </resources>

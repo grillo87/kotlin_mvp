@@ -15,6 +15,7 @@ class ListContract {
         fun setArticlesList(articles: ArrayList<ArticleView>)
         fun navigateToDetail()
         fun navigateToLogin()
+        fun redirectToGitlab()
         fun showCloseSessionDialog()
         fun dismissDialog()
         fun onTouchArticle(view: android.view.View, position: Int)
@@ -34,6 +35,7 @@ class ListContract {
         fun deleteArticlesSelected()
         fun displayDialogInformation()
         fun dismissDialogInformation()
+        fun openGitlab()
         fun closeSession()
 
     }

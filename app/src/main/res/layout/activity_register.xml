@@ -142,19 +142,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <ImageView
-        android:id="@+id/activityDetailBackImageview"
-        android:layout_width="@dimen/toolbar_back_width"
-        android:layout_height="0dp"
-        android:layout_marginBottom="@dimen/toolbar_back_margin_bottom"
-        android:layout_marginLeft="@dimen/toolbar_back_lateral_margins"
-        android:layout_marginStart="@dimen/toolbar_back_lateral_margins"
-        android:layout_marginTop="@dimen/toolbar_back_margin_bottom"
-        android:scaleType="centerInside"
-        android:src="@drawable/back_arrow"
-        app:layout_constraintBottom_toBottomOf="@+id/activityRegisterToolbar"
-        app:layout_constraintStart_toStartOf="@+id/activityRegisterToolbar"
-        app:layout_constraintTop_toTopOf="parent" />
-
 </android.support.constraint.ConstraintLayout>

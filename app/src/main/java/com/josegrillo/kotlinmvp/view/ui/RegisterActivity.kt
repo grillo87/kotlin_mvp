@@ -25,6 +25,15 @@ class RegisterActivity : BaseActivity(), RegisterContract.View, View.OnClickList
 
     }
 
+    override fun initializeSupportActionBar() {
+
+        setSupportActionBar(activityRegisterToolbar)
+        supportActionBar?.title = resources.getString(R.string.register_title_text)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
+    }
+
     override fun onDestroy() {
         presenter.unsubscribe()
         super.onDestroy()
@@ -50,7 +59,6 @@ class RegisterActivity : BaseActivity(), RegisterContract.View, View.OnClickList
     }
 
     override fun initializeOnClickListeners() {
-        activityDetailBackImageview.setOnClickListener(this)
         activityRegisterButton.setOnClickListener(this)
     }
 
@@ -61,13 +69,6 @@ class RegisterActivity : BaseActivity(), RegisterContract.View, View.OnClickList
 
     override fun hideLoading() {
         dialog?.dismiss()
-    }
-
-    override fun navigateToLogin() {
-        val registerIntent = Intent().setClass(
-                this@RegisterActivity, LoginActivity::class.java)
-        startActivity(registerIntent)
-        finish()
     }
 
     override fun navigateToList() {
@@ -114,9 +115,7 @@ class RegisterActivity : BaseActivity(), RegisterContract.View, View.OnClickList
     override fun onClick(v: View?) {
         when (v?.id) {
 
-            activityDetailBackImageview.id -> presenter.loginUser()
             activityRegisterButton.id -> presenter.registerUser(activityRegisterEmailEdittext.text.toString(), activityRegisterPasswordEdittext.text.toString(), activityRegisterConfirmPasswordEdittext.text.toString())
-
 
         }
     }

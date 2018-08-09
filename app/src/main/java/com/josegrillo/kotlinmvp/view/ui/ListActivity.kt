@@ -2,8 +2,11 @@ package com.josegrillo.kotlinmvp.view.ui
 
 import android.app.Dialog
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.Window
 import android.widget.TextView
@@ -34,6 +37,13 @@ class ListActivity : BaseActivity(), ListContract.View, View.OnClickListener {
 
     }
 
+    override fun initializeSupportActionBar() {
+
+        setSupportActionBar(activityListToolBar)
+        supportActionBar?.title = resources.getString(R.string.kotlin_list_title)
+
+    }
+
     override fun onDestroy() {
         presenter.unsubscribe()
         super.onDestroy()
@@ -49,18 +59,26 @@ class ListActivity : BaseActivity(), ListContract.View, View.OnClickListener {
         presenter.attach(this)
     }
 
-
-    override fun setCustomFonts() {
-        activityListTitleTextview.setTypeface(this.customFont)
-    }
-
     override fun showLoading() {
         dialog = DialogUtils.showLoadingDialog(this, resources.getString(R.string.loading_articles_text), this.customFont)
         dialog?.show()
     }
 
-    override fun initializeOnClickListeners() {
-        this.activityListProfileImageview.setOnClickListener(this)
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        menuInflater.inflate(R.menu.toolbar_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+
+            R.id.actionGitlab -> presenter.openGitlab()
+            R.id.actionCloseSession -> presenter.displayDialogInformation()
+        }
+
+
+        return true
     }
 
     override fun hideLoading() {
@@ -86,7 +104,6 @@ class ListActivity : BaseActivity(), ListContract.View, View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            activityListProfileImageview.id -> presenter.displayDialogInformation()
             dialogCloseSessionAcceptTextview?.id -> presenter.closeSession()
             dialogCloseSessionCancelTextview?.id -> presenter.dismissDialogInformation()
         }
@@ -101,7 +118,6 @@ class ListActivity : BaseActivity(), ListContract.View, View.OnClickListener {
         val listIntent = Intent().setClass(
                 this@ListActivity, DetailActivity::class.java)
         startActivity(listIntent)
-        finish()
     }
 
     override fun navigateToLogin() {
@@ -133,6 +149,13 @@ class ListActivity : BaseActivity(), ListContract.View, View.OnClickListener {
 
     override fun dismissDialog() {
         dialogCloseSession?.dismiss()
+    }
+
+    override fun redirectToGitlab() {
+
+        val gitlabIntent = Intent(Intent.ACTION_VIEW, Uri.parse(resources.getString(R.string.gitlab_url_repository)))
+        startActivity(gitlabIntent)
+
     }
 
 }
