@@ -1,6 +1,6 @@
 <b>Kotlin MVP</b>
 
-<img src="https://gitlab.com/grillo87/kotlin_mvp/raw/master/app/src/main/ic_launcher-web.png" alt="" style="max-width:100%;">
+<img src="https://gitlab.com/grillo87/kotlin_mvp/raw/master/app/src/main/ic_launcher-web.png" alt="" width="240" height="240">
 
 <body>
 <b>Demo App developed Kotlin for Android</b></br></br>
@@ -16,7 +16,7 @@ The information displayed on the articles comes from the official Kotlin webpage
 
 The app is available on Google Play on:</br></br>
 
-<a href="https://play.google.com/store/apps/details?id=com.josegrillo.kotlinmvp"><img src="https://cdn-images-1.medium.com/max/1920/1*OIIv4FEjJQMqh-zEPhtlYA.png" title="Google Play Link" alt="Google"></a>
+<a href="https://play.google.com/store/apps/details?id=com.josegrillo.kotlinmvp"><img src="https://cdn-images-1.medium.com/max/1920/1*OIIv4FEjJQMqh-zEPhtlYA.png" title="Google Play Link" alt="Google" width="231" height="80"></a>
 
 The app uses the following libraries:</br></br>
 
