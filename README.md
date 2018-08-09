@@ -22,7 +22,7 @@ The app uses the following libraries:</br></br>
 
 - <a href="https://github.com/google/dagger">Dagger2</a></br>
 - <a href="https://github.com/pnikosis/materialish-progress">Material-ish Progress</a></br>
-- <a href="https://developer.android.com/topic/libraries/architecture/adding-components">Room</a></br></br>
+- <a href="https://developer.android.com/topic/libraries/architecture/adding-components">Room</a></br>
 - <a href="https://github.com/square/retrofit">Retrofit2</a></br>
 - <a href="https://github.com/ReactiveX/RxJava">RxJava: Reactive Extensions for the JVM</a></br>
 - <a href="https://github.com/ReactiveX/RxAndroid">RxAndroid: Reactive Extensions for Android</a></br>
