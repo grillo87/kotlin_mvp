@@ -40,7 +40,7 @@
     <string name="google_play_url">https://play.google.com/store/apps/details?id=com.josegrillo.kotlinmvp</string>
     <string name="google_play_deep_linking">market://details?id=com.josegrillo.kotlinmvp</string>
 
-    <string name="activity_list_banner_unitid">ca-app-pub-9058872120522121/4564585646</string>
-    <string name="activity_detail_banner_unitid">ca-app-pub-9058872120522121/8113357539</string>
+    <string name="activity_list_banner_unitid">INSERT-ADMOB-KEY6</string>
+    <string name="activity_detail_banner_unitid">INSERT-ADMOB-KEY</string>
 
 </resources>
