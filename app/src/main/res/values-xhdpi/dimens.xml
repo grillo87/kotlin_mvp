@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="k_splash_title_textsize">45sp</dimen>
-    <dimen name="subtitle_splash_textsize">30sp</dimen>
+    <dimen name="k_splash_title_textsize">55sp</dimen>
+    <dimen name="subtitle_splash_textsize">40sp</dimen>
     <dimen name="subtitle_splash_margin_top">16dp</dimen>
-    <dimen name="developed_by_textsize">10sp</dimen>
+    <dimen name="developed_by_textsize">20sp</dimen>
     <dimen name="developed_margin_bottom">16dp</dimen>
     <dimen name="developed_margin_end">16dp</dimen>
     <dimen name="developed_margin_right">16dp</dimen>
-    <dimen name="form_title_textsize">18sp</dimen>
+    <dimen name="form_title_textsize">22sp</dimen>
     <dimen name="form_title_margin_top">32dp</dimen>
     <dimen name="form_input_margin_bottom">16dp</dimen>
     <dimen name="form_input_lateral_margins">8dp</dimen>
@@ -36,7 +36,7 @@
     <dimen name="element_list_titles_lateral_margins">8dp</dimen>
     <dimen name="element_list_image_margins">8dp</dimen>
     <dimen name="element_list_container_margins">16dp</dimen>
-    <dimen name="element_list_height">120dp</dimen>
+    <dimen name="element_list_height">150dp</dimen>
     <dimen name="activity_splash_logo_imageview_margins">8dp</dimen>
     <dimen name="toolbar_back_width">30dp</dimen>
     <dimen name="toolbar_logout_width">30dp</dimen>
@@ -57,6 +57,6 @@
     <dimen name="activity_detail_content_title_textsize">16sp</dimen>
     <dimen name="activity_list_recycler_bottom_margin">16dp</dimen>
     <dimen name="activity_list_banner_upper_margins">16dp</dimen>
-    <dimen name="activity_list_banner_lateral_margins">8dp</dimen>
+    <dimen name="activity_list_banner_lateral_margins"> 8dp</dimen>
 
 </resources>

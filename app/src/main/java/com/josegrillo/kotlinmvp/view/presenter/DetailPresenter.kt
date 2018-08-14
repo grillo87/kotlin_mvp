@@ -4,7 +4,6 @@ import android.util.Log
 import com.josegrillo.kotlinmvp.domain.model.database.User
 import com.josegrillo.kotlinmvp.domain.model.mapper.ArticleMapper
 import com.josegrillo.kotlinmvp.domain.usecase.DeleteUser
-import com.josegrillo.kotlinmvp.domain.usecase.GetArticleSelected
 import com.josegrillo.kotlinmvp.domain.usecase.LoadArticleSelected
 import com.josegrillo.kotlinmvp.domain.usecase.LoadUserInformation
 import com.josegrillo.kotlinmvp.view.contracts.DetailContract
@@ -26,6 +25,7 @@ class DetailPresenter @Inject constructor(val loadArticleSelected: LoadArticleSe
 
     override fun attach(view: DetailContract.View) {
         this.view = view
+
         this.view.loadBanner()
         this.getArticleSelected()
         this.loadUserInformation()
@@ -116,6 +116,10 @@ class DetailPresenter @Inject constructor(val loadArticleSelected: LoadArticleSe
 
     override fun openGitlab() {
         this.view.redirectToGitlab()
+    }
+
+    override fun openGooglePlay() {
+        this.view.redirectToGooglePlay()
     }
 
 }

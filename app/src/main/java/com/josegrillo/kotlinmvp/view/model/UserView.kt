@@ -1,7 +1,6 @@
 package com.josegrillo.kotlinmvp.domain.model
 
-import android.util.Patterns
-import java.util.regex.Pattern
+import com.josegrillo.kotlinmvp.utils.AppConstants
 
 data class UserView(
         var email: String,
@@ -10,7 +9,8 @@ data class UserView(
     constructor() : this("", "")
 
     fun isValidEmail(): Boolean {
-        return Patterns.EMAIL_ADDRESS.matcher(this.email).matches()
+
+        return AppConstants.EMAIL_ADDRESS_PATTERN.matcher(this.email).matches()
     }
 
     fun isValidPassword(): Boolean {

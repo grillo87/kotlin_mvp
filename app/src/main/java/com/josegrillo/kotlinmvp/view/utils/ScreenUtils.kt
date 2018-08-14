@@ -1,14 +1,11 @@
 package com.josegrillo.kotlinmvp.view.utils
 
-import com.josegrillo.kotlinmvp.view.base.BaseActivity
+import android.content.pm.ActivityInfo
+import android.os.Build
 import android.support.v4.content.ContextCompat
 import android.view.WindowManager
-import android.os.Build
 import com.josegrillo.kotlinmvp.R
-import android.content.pm.ActivityInfo
-import android.app.Activity
-
-
+import com.josegrillo.kotlinmvp.view.base.BaseActivity
 
 
 class ScreenUtils {

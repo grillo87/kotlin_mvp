@@ -11,7 +11,6 @@ import android.view.View
 import android.view.Window
 import android.widget.TextView
 import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.MobileAds
 import com.josegrillo.kotlinmvp.R
 import com.josegrillo.kotlinmvp.di.component.DaggerActivitiesComponent
 import com.josegrillo.kotlinmvp.di.module.ActivitiesModule
@@ -24,6 +23,8 @@ import com.josegrillo.kotlinmvp.view.utils.DialogUtils
 import com.josegrillo.kotlinmvp.view.utils.ToastUtils
 import kotlinx.android.synthetic.main.activity_list.*
 import javax.inject.Inject
+import com.google.android.gms.ads.MobileAds
+
 
 class ListActivity : BaseActivity(), ListContract.View, View.OnClickListener {
 
@@ -76,6 +77,7 @@ class ListActivity : BaseActivity(), ListContract.View, View.OnClickListener {
         when (item?.itemId) {
 
             R.id.actionGitlab -> presenter.openGitlab()
+            R.id.actionRateApp -> presenter.openGooglePlay()
             R.id.actionCloseSession -> presenter.displayDialogInformation()
         }
 
@@ -165,6 +167,24 @@ class ListActivity : BaseActivity(), ListContract.View, View.OnClickListener {
         MobileAds.initialize(this, resources.getString(R.string.activity_list_banner_unitid))
         val adRequest = AdRequest.Builder().build()
         activityListBannerAdview.loadAd(adRequest)
+
+    }
+
+    override fun redirectToGooglePlay() {
+
+        var googlePlayIntent: Intent? = null
+
+        try {
+
+            googlePlayIntent = Intent(Intent.ACTION_VIEW, Uri.parse(resources.getString(R.string.google_play_deep_linking)))
+
+        } catch (anfe: android.content.ActivityNotFoundException) {
+
+            googlePlayIntent = Intent(Intent.ACTION_VIEW, Uri.parse(resources.getString(R.string.google_play_url)))
+        }
+
+        startActivity(googlePlayIntent)
+
 
     }
 

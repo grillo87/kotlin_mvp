@@ -1,5 +1,7 @@
 package com.josegrillo.kotlinmvp.utils
 
+import java.util.regex.Pattern
+
 class AppConstants {
 
     companion object {
@@ -11,6 +13,7 @@ class AppConstants {
         val HEADER_APPLICATION_JSON_TAG = "application/json"
         val REQUEST_TAG = "Request"
         val RESPONSE_TAG = "Response"
+        val EMAIL_ADDRESS_PATTERN = Pattern.compile("[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" + "\\@" + "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" + "(" + "\\." + "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" + ")")
 
     }
 

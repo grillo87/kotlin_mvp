@@ -5,9 +5,17 @@
         android:id="@+id/actionGitlab"
         android:title="@string/gitlab_code_text"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/actionRateApp"
+        android:title="@string/rate_app_text"
+        app:showAsAction="never" />
+
     <item
         android:id="@+id/actionCloseSession"
         android:title="@string/close_session_text"
         app:showAsAction="never" />
+
+
 
 </menu>

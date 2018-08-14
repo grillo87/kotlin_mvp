@@ -10,6 +10,7 @@ class DetailContract {
         fun showUnexpectedError()
         fun showCloseSessionDialog()
         fun redirectToGitlab()
+        fun redirectToGooglePlay()
         fun dismissDialog()
         fun navigateToLogin()
         fun loadBanner()
@@ -26,6 +27,7 @@ class DetailContract {
         fun dismissDialogInformation()
         fun closeSession()
         fun openGitlab()
+        fun openGooglePlay()
 
     }
 

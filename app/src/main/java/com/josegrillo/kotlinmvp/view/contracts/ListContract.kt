@@ -16,6 +16,7 @@ class ListContract {
         fun navigateToDetail()
         fun navigateToLogin()
         fun redirectToGitlab()
+        fun redirectToGooglePlay()
         fun showCloseSessionDialog()
         fun dismissDialog()
         fun onTouchArticle(view: android.view.View, position: Int)
@@ -37,6 +38,7 @@ class ListContract {
         fun displayDialogInformation()
         fun dismissDialogInformation()
         fun openGitlab()
+        fun openGooglePlay()
         fun closeSession()
 
     }

@@ -1,6 +1,5 @@
 package com.josegrillo.kotlinmvp.view.viewholder
 
-import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -20,7 +19,7 @@ class ArticleViewHolder(val view: View, val onTouchArticle: ListContract.View) :
         }
 
         GlideApp.with(view).load(articleView.imageUrl)
-                .centerCrop()
+                .fitCenter()
                 .diskCacheStrategy(DiskCacheStrategy.DATA)
                 .into(view.elementListImageview)
 

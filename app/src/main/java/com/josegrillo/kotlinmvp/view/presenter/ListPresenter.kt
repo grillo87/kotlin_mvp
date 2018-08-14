@@ -1,15 +1,12 @@
 package com.josegrillo.kotlinmvp.view.presenter
 
 import android.util.Log
-import com.josegrillo.kotlinmvp.domain.model.ArticleView
-import com.josegrillo.kotlinmvp.domain.model.UserView
 import com.josegrillo.kotlinmvp.domain.model.api.response.Article
 import com.josegrillo.kotlinmvp.domain.model.database.User
 import com.josegrillo.kotlinmvp.domain.model.mapper.ArticleMapper
 import com.josegrillo.kotlinmvp.domain.usecase.*
 import com.josegrillo.kotlinmvp.view.contracts.ListContract
 import io.reactivex.Observable
-import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -192,5 +189,10 @@ class ListPresenter @Inject constructor(val getArticles: GetArticles, val getArt
     override fun openGitlab() {
         this.view.redirectToGitlab()
     }
+
+    override fun openGooglePlay() {
+        this.view.redirectToGooglePlay()
+    }
+
 
 }

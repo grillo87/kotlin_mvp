@@ -124,6 +124,7 @@ class DetailActivity : BaseActivity(), DetailContract.View, View.OnClickListener
         when (item?.itemId) {
 
             R.id.actionGitlab -> presenter.openGitlab()
+            R.id.actionRateApp -> presenter.openGooglePlay()
             R.id.actionCloseSession -> presenter.displayDialogInformation()
         }
 
@@ -159,5 +160,24 @@ class DetailActivity : BaseActivity(), DetailContract.View, View.OnClickListener
         activityDetailBannerAdview.loadAd(adRequest)
 
     }
+
+    override fun redirectToGooglePlay() {
+
+        var googlePlayIntent: Intent? = null
+
+        try {
+
+            googlePlayIntent = Intent(Intent.ACTION_VIEW, Uri.parse(resources.getString(R.string.google_play_deep_linking)))
+
+        } catch (anfe: android.content.ActivityNotFoundException) {
+
+            googlePlayIntent = Intent(Intent.ACTION_VIEW, Uri.parse(resources.getString(R.string.google_play_url)))
+        }
+
+        startActivity(googlePlayIntent)
+
+
+    }
+
 
 }

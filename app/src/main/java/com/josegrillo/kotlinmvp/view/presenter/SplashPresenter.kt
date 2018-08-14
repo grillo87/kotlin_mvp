@@ -1,8 +1,6 @@
 package com.josegrillo.kotlinmvp.view.presenter
 
 import android.util.Log
-import com.josegrillo.kotlinmvp.domain.usecase.DeleteArticleSelected
-import com.josegrillo.kotlinmvp.domain.usecase.GetArticleSelected
 import com.josegrillo.kotlinmvp.domain.usecase.GetUser
 import com.josegrillo.kotlinmvp.view.contracts.SplashContract
 import io.reactivex.disposables.CompositeDisposable
