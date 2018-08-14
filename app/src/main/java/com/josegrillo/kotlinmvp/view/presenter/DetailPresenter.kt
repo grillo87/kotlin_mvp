@@ -26,6 +26,7 @@ class DetailPresenter @Inject constructor(val loadArticleSelected: LoadArticleSe
 
     override fun attach(view: DetailContract.View) {
         this.view = view
+        this.view.loadBanner()
         this.getArticleSelected()
         this.loadUserInformation()
     }

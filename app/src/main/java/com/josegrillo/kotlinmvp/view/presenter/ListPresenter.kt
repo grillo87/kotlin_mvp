@@ -30,6 +30,7 @@ class ListPresenter @Inject constructor(val getArticles: GetArticles, val getArt
         this.view = view
         this.view.showLoading()
 
+        this.view.loadBanner()
         this.loadUserInformation()
         this.checkArticleSelected()
         this.loadArticles()

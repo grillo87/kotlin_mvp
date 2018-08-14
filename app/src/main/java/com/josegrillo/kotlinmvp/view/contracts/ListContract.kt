@@ -19,6 +19,7 @@ class ListContract {
         fun showCloseSessionDialog()
         fun dismissDialog()
         fun onTouchArticle(view: android.view.View, position: Int)
+        fun loadBanner()
 
 
     }

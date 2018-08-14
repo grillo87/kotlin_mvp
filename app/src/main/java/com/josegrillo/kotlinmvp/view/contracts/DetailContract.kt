@@ -12,6 +12,7 @@ class DetailContract {
         fun redirectToGitlab()
         fun dismissDialog()
         fun navigateToLogin()
+        fun loadBanner()
 
     }
 

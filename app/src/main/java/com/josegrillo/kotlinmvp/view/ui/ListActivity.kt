@@ -10,6 +10,8 @@ import android.view.MenuItem
 import android.view.View
 import android.view.Window
 import android.widget.TextView
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.josegrillo.kotlinmvp.R
 import com.josegrillo.kotlinmvp.di.component.DaggerActivitiesComponent
 import com.josegrillo.kotlinmvp.di.module.ActivitiesModule
@@ -155,6 +157,14 @@ class ListActivity : BaseActivity(), ListContract.View, View.OnClickListener {
 
         val gitlabIntent = Intent(Intent.ACTION_VIEW, Uri.parse(resources.getString(R.string.gitlab_url_repository)))
         startActivity(gitlabIntent)
+
+    }
+
+    override fun loadBanner() {
+
+        MobileAds.initialize(this, resources.getString(R.string.activity_list_banner_unitid))
+        val adRequest = AdRequest.Builder().build()
+        activityListBannerAdview.loadAd(adRequest)
 
     }
 

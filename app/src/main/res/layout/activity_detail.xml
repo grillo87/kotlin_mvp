@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -89,7 +90,7 @@
         android:layout_marginRight="@dimen/activity_detail_content_scrollview_lateral_margins"
         android:layout_marginStart="@dimen/activity_detail_content_scrollview_lateral_margins"
         android:layout_marginTop="@dimen/activity_detail_content_scrollview_upper_margins"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/activityDetailBannerAdview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/activityDetailHorizontalHeaderGuideline">
@@ -101,5 +102,20 @@
             android:textColor="@color/white" />
 
     </ScrollView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/activityDetailBannerAdview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_detail_banner_upper_margins"
+        android:layout_marginEnd="@dimen/activity_detail_banner_lateral_margins"
+        android:layout_marginLeft="@dimen/activity_detail_banner_lateral_margins"
+        android:layout_marginRight="@dimen/activity_detail_banner_lateral_margins"
+        android:layout_marginStart="@dimen/activity_detail_banner_lateral_margins"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/activity_detail_banner_unitid"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

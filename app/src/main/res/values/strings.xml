@@ -37,4 +37,7 @@
 
     <string name="gitlab_url_repository">https://gitlab.com/grillo87/kotlin_mvp</string>
 
+    <string name="activity_list_banner_unitid">INSERT-ADMOB-KEY</string>
+    <string name="activity_detail_banner_unitid">INSERT-ADMOB-KEY</string>
+
 </resources>

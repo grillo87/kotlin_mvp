@@ -6,12 +6,13 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.text.Html
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.Window
 import android.widget.TextView
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.josegrillo.kotlinmvp.R
 import com.josegrillo.kotlinmvp.di.component.DaggerActivitiesComponent
 import com.josegrillo.kotlinmvp.di.module.ActivitiesModule
@@ -22,7 +23,6 @@ import com.josegrillo.kotlinmvp.view.base.BaseActivity
 import com.josegrillo.kotlinmvp.view.contracts.DetailContract
 import com.josegrillo.kotlinmvp.view.utils.ToastUtils
 import kotlinx.android.synthetic.main.activity_detail.*
-import kotlinx.android.synthetic.main.activity_list.*
 import javax.inject.Inject
 
 class DetailActivity : BaseActivity(), DetailContract.View, View.OnClickListener {
@@ -149,6 +149,14 @@ class DetailActivity : BaseActivity(), DetailContract.View, View.OnClickListener
 
         val gitlabIntent = Intent(Intent.ACTION_VIEW, Uri.parse(resources.getString(R.string.gitlab_url_repository)))
         startActivity(gitlabIntent)
+
+    }
+
+    override fun loadBanner() {
+
+        MobileAds.initialize(this, resources.getString(R.string.activity_detail_banner_unitid))
+        val adRequest = AdRequest.Builder().build()
+        activityDetailBannerAdview.loadAd(adRequest)
 
     }
 

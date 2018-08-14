@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,13 +12,13 @@
         android:id="@+id/activityListRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="@dimen/activity_list_recycler_upper_margins"
+        android:layout_marginBottom="@dimen/activity_list_recycler_bottom_margin"
         android:layout_marginEnd="@dimen/activity_list_recycler_lateral_margins"
         android:layout_marginLeft="@dimen/activity_list_recycler_lateral_margins"
         android:layout_marginRight="@dimen/activity_list_recycler_lateral_margins"
         android:layout_marginStart="@dimen/activity_list_recycler_lateral_margins"
         android:layout_marginTop="@dimen/activity_list_recycler_upper_margins"
-        app:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintBottom_toTopOf="@+id/activityListBannerAdview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,5 +35,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/activityListBannerAdview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_list_banner_upper_margins"
+        android:layout_marginEnd="@dimen/activity_list_banner_lateral_margins"
+        android:layout_marginLeft="@dimen/activity_list_banner_lateral_margins"
+        android:layout_marginRight="@dimen/activity_list_banner_lateral_margins"
+        android:layout_marginStart="@dimen/activity_list_banner_lateral_margins"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/activity_list_banner_unitid"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
