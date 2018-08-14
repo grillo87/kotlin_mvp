@@ -28,6 +28,7 @@ The app uses the following libraries:</br></br>
 - <a href="https://github.com/ReactiveX/RxAndroid">RxAndroid: Reactive Extensions for Android</a></br>
 - <a href="https://github.com/ihsanbal/LoggingInterceptor">LoggingInterceptor - Interceptor for OkHttp3 with pretty logger</a></br>
 - <a href="https://github.com/bumptech/glide">Glide</a></br>
+- <a href="https://developers.google.com/admob/android/quick-start">Google Admob</a></br>
 
 As reference for the definition of the architecture of the project the following resources were used as reference:</br></br>
 
